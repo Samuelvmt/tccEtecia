@@ -8,35 +8,37 @@
     <script scr="function.js"></script>
     <title>Etecia | Login</title>
 </head>
-<body class="bLogin">
-
+<body class="lLogin">
+<main>
 <h2>Login</h2>
 
-<form action="/action_page.php" method="post">
+<form action="/action_page.php" method="post" class="lForm">
   <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    <img src="images/avatar.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
     <label for="uname"><b>Usuário</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-
+    <input type="text" placeholder="Enter Username" class="lInput" name="uname" required>
+<br>
     <label for="psw"><b>Senha</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-        
-    <button type="submit">Entrar</button>
+    <input type="password" placeholder="Enter Password" class="lInput" name="psw" required >
+    <br> 
+    <button type="submit" class="lButton">Entrar</button>
+    <br>
     <label>
-      <input type="checkbox" checked="checked" name="remember"> Manter-me conectado
+      <input type="checkbox" checked="checked" name="remember" class="lInput"> Manter-me conectado
     </label>
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancelar</button>
+    <button type="button" class="cancelbtn lButton">Cancel</button>
     <span class="psw"><a href="#">Esqueceu a senha?</a></span>
   </div>
 </form>
+
 <div></div>
 
-
+</main>
 </body>
 </html>

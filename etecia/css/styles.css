@@ -1,29 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rock+Salt&display=swap" rel="stylesheet');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 
 /* corpo */
-.body-image{
-    
-    width: 100%;
-    height: auto;
+.body-image {
+
+  width: 100%;
+  height: auto;
 }
 
 /* cabeçalho */
 
 .header {
-    position: fixed;
-    background-image: url("../images/blackbk.jpg");
-    background-size: 100%;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    padding: 15px 500px;
+  position: fixed;
+  background-image: url("../images/blackbk.jpg");
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  padding: 15px 500px;
 }
 
 .header-nav {
@@ -33,22 +33,22 @@
   justify-content: space-between;
 }
 
-.outros-link{
-    font: 800 18px "Oswald", sans-serif;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: rgb(211, 13, 112);
- }
-
-.etecia-link{
-    font: 400 28px "Oswald", sans-serif;
-    text-transform: uppercase;
-    text-decoration: none;
-    color:rgb(211, 13, 112); 
-    align-items: start;   
+.outros-link {
+  font: 800 18px "Oswald", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgb(211, 13, 112);
 }
 
-.outros-link:hover{
+.etecia-link {
+  font: 400 28px "Oswald", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgb(211, 13, 112);
+  align-items: start;
+}
+
+.outros-link:hover {
   color: rgba(202, 132, 187, 0.8);
   transition: 0.2s;
 }
@@ -56,62 +56,62 @@
 /* rodapé */
 
 .footer {
-    background: rgb(0, 0, 0);
-    color: white;
-    padding: 15px 10px;
-    border: 0px;
-    font-weight: bold;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-   }
-
- .mbl-link{
-    align-items: center;
-    justify-content: start;
-    padding: 0 20px;
+  background: rgb(0, 0, 0);
+  color: white;
+  padding: 15px 10px;
+  border: 0px;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
 }
 
-.sp-link{
+.mbl-link {
+  align-items: center;
+  justify-content: start;
+  padding: 0 20px;
+}
+
+.sp-link {
   align-items: center;
   justify-content: center;
-  margin-left:30px ;
+  margin-left: 30px;
 }
-  
-.cps-link{
+
+.cps-link {
   align-items: center;
   justify-content: center;
 }
 
-.insta-link{
+.insta-link {
   float: right;
   align-items: center;
   margin-right: 40px;
   margin-bottom: 5px;
 }
 
-.yt-link{
-    float:right;
-    align-items: end;
-    margin-right: 10px;
+.yt-link {
+  float: right;
+  align-items: end;
+  margin-right: 10px;
   margin-bottom: 5px;
-  }
-  
-  .etecia-link{
-    margin-left: 20px;
-    }
+}
 
-    /* slides */
+.etecia-link {
+  margin-left: 20px;
+}
+
+/* slides */
 
 /* botões do slide  */
-.btnPrev, .btnNext {
+.btnPrev,
+.btnNext {
   cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
-  margin-top: -22px;
   padding: 16px;
-  color: rgb(216, 38, 162);
+  color: rgb(255, 255, 255);
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -126,17 +126,41 @@
   border-radius: 3px 0 0 3px;
 }
 
-/* tela login */
+/* The dots/bullets/indicators */
 
-.bLogin{
-background-image: url(../images/scbk.jpg);
+.active,
+.dot:hover {
+  background-color: #717171;
 }
 
-body {font-family: Arial, Helvetica, sans-serif;}
-form {border: 3px solid #f1f1f1;}
 
-input[type=text], input[type=password] {
-  width: 100%;
+/* fading slide */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+/* tela login */
+
+.lLogin {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.lForm {
+  border: 3px solid #f1f1f1;
+}
+
+.lInput[type=text], input[type=password] {
+  width: 20%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -144,16 +168,17 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
-button {
-  color: rgba(202, 132, 187, 0.8);
+.lButton {
+  background-color: #04AA6D;
+  color: white;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 20%;
 }
 
-button:hover {
+.lButton:hover {
   opacity: 0.8;
 }
 
@@ -169,8 +194,8 @@ button:hover {
 }
 
 img.avatar {
-  width: 40%;
-  border-radius: 50%;
+  width: 5%;
+  border-radius: 5%;
 }
 
 .container {
@@ -189,6 +214,6 @@ span.psw {
      float: none;
   }
   .cancelbtn {
-     width: 100%;
+     width: 20%;
   }
 }
