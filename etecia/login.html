@@ -8,8 +8,8 @@
     <script scr="function.js"></script>
     <title>Etecia | Login</title>
 </head>
-<body class="lLogin">
-<main>
+<body class="lBody">
+<main class="lMain">
 <h2>Login</h2>
 
 <form action="/action_page.php" method="post" class="lForm">
@@ -18,10 +18,10 @@
   </div>
 
   <div class="container">
-    <label for="uname"><b>Usuário</b></label>
+    <label for="uname" class="lLabel"><b>Usuário</b></label>
     <input type="text" placeholder="Enter Username" class="lInput" name="uname" required>
 <br>
-    <label for="psw"><b>Senha</b></label>
+    <label for="psw" class="lLabel"><b>Senha</b></label>
     <input type="password" placeholder="Enter Password" class="lInput" name="psw" required >
     <br> 
     <button type="submit" class="lButton">Entrar</button>
@@ -32,7 +32,7 @@
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn lButton">Cancel</button>
+    <button type="button" class="cancelbtn lButton">Cancelar</button>
     <span class="psw"><a href="#">Esqueceu a senha?</a></span>
   </div>
 </form>
