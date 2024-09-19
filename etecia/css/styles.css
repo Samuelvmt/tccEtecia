@@ -176,7 +176,7 @@ input[type=password] {
   margin-left: 10%;
 }
 
-.checkboxLabel{
+.checkboxLabel {
   color: white;
 }
 
@@ -219,6 +219,10 @@ span.psw {
   float: right;
   padding-top: 16px;
   margin-right: 10%;
+}
+
+.hreSpan {
+  text-decoration: none;
   color: white;
 }
 
