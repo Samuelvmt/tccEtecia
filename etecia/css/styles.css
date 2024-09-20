@@ -144,12 +144,18 @@
 
 /* tela login */
 .lBody {
-  background-color: rgba(216, 52, 181, 1);
+  background: linear-gradient(to right, rgb(212, 15, 137), rgb(212, 15, 137), rgb(254, 255, 254));
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
-  justify-content: end;
+  flex-direction:column-reverse;
+  justify-content: space-between;
+  align-items: end;
   margin-top: 5%;
   margin-right: 10%;
+}
+
+.lMain{
+  
 }
 
 .lForm {
@@ -224,6 +230,12 @@ span.psw {
 .hreSpan {
   text-decoration: none;
   color: white;
+}
+
+.lLogo {
+  height: 500px;
+  width: 500px;
+
 }
 
 /* Change styles for span and cancel button on extra small screens */
