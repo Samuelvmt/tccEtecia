@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <script scr="function.js"></script>
+    <title>Etecia</title>
+</head>
+
+<body class="bSobre">
+    <main class="mSobre">
+        <div class="text-sobre-container">
+            <p class="txtSobre">Fundada no segundo semestre de 2010 a ETEC Irmã Agostina é uma escola conhecida pela qualidade de ensino,
+                que faz parte do Centro Paula Souzao e ferece ensino médio integrado e cursos técnicos nas áreas de
+                gestão, saúde e tecnologia. Apresentando resultados fantásticos como uma das melhores escolas públicas
+                no ENEM, a melhor escola pública de São Paulo segundo o IDEB, centenas de alunos aprovados nas melhores
+                universidades do país e diversos alunos qualificados atuando no mercado de trabalho.</p>
+        </div>
+        <div class="sobre-container">
+            <div class="slideSobre fade">
+                <img id="myImage" src="images/eteciaft.jpg" height="550" width="1000">
+            </div>
+            <div class="slideSobre fade">
+                <img id="myImage" src="images/etecia_frente.jpg" height="550" width="1000">
+            </div>
+            <a class="btnPrev2 dot" onclick="plusSlides(-1, 0)">&#10094;</a>
+            <a class="btnNext2 dot" onclick="plusSlides(1, 0)">&#10095;</a>
+        </div>
+        </div>
+    </main>
+    <script>
+        let slideIndex = [1, 1];
+        let slideId = ["slideSobre"]
+        showSlides(1, 0);
+        showSlides(1, 1);
+
+        function plusSlides(n, no) {
+            showSlides(slideIndex[no] += n, no);
+        }
+
+        function showSlides(n, no) {
+            let i;
+            let x = document.getElementsByClassName(slideId[no]);
+            if (n > x.length) { slideIndex[no] = 1 }
+            if (n < 1) { slideIndex[no] = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex[no] - 1].style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

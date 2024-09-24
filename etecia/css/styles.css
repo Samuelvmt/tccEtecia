@@ -250,3 +250,73 @@ span.psw {
     width: 80%;
   }
 }
+
+
+
+/* página sobre */
+.bSobre {
+  background-color: #717171;
+}
+.text-sobre-container{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.txtSobre{
+  font: 400 18px "Roboto", sans-serif;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+/*  slide da página de sobre  */
+
+.sobre-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-top: 5%;
+  margin-right: 12%;
+  padding: 0;
+
+}
+
+.slideSobre {
+  border: 10px solid black;
+  border-radius: 8px;
+}
+
+
+.btnPrev2,
+.btnNext2 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* posicionar o botão direito do slide */
+.btnNext2 {
+  margin-bottom: 0.5%;
+  margin-right: 0.5%;
+  border-radius: 3px 0 0 3px;
+}
+
+/* posicionar o botão esquerdo do slide */
+.btnPrev2 {
+  margin-bottom: 0.5%;
+  margin-right: 50.9%;
+  border-radius: 3px 0 0 3px;
+}
+
+/* The dots/bullets/indicators */
+.active,
+.dot:hover {
+  background-color: #717171;
+}
