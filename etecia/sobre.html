@@ -24,37 +24,64 @@
         </div>
         <div class="sobre-container">
             <div class="slideSobre fade">
-                <img id="myImage" src="images/eteciaft.jpg" alt="Imagem da etec" height="550" width="1000">
-            </div>
-            <div class="slideSobre fade">
-                <img id="myImage" src="images/etecia_frente.jpg" alt="Imagem da etec" height="550" width="1000">
-            </div>
-            <a class="btnPrev2 dot" onclick="plusSlides(-1, 0)">&#10094;</a>
-            <a class="btnNext2 dot" onclick="plusSlides(1, 0)">&#10095;</a>
-        </div>
-        </div>
-    </main>
-    <script>
-        let slideIndex = [1, 1];
-        let slideId = ["slideSobre"]
-        showSlides(1, 0);
-        showSlides(1, 1);
+                <div class="numbertext">1 / 3</div>
+                <img src="images/etecia_frente.jpg"height="550" width="1000" >
+                <div class="text">Caption Text</div>
+              </div>
+              
+              <div class="slideSobre fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="images/eteciaft.jpg" height="550" width="1000">
+                <div class="text">Caption Two</div>
+              </div>
+              
+              <div class="slideSobre fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="images/backhd2.jpg" height="550" width="1000">
+                <div class="text">Caption Three</div>
+              </div>
+              
+              <a class="btnPrev2" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="btnNext2" onclick="plusSlides(1)">&#10095;</a>
+              
+              </div>
+              <br>
 
-        function plusSlides(n, no) {
-            showSlides(slideIndex[no] += n, no);
-        }
-
-        function showSlides(n, no) {
-            let i;
-            let x = document.getElementsByClassName(slideId[no]);
-            if (n > x.length) { slideIndex[no] = 1 }
-            if (n < 1) { slideIndex[no] = x.length }
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            x[slideIndex[no] - 1].style.display = "block";
-        }
-    </script>
+              <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+              </div>       
+            </div>
+            <script>
+                let slideIndex = 1;
+                showSlides(slideIndex);
+                
+                function plusSlides(n) {
+                  showSlides(slideIndex += n);
+                }
+                
+                function currentSlide(n) {
+                  showSlides(slideIndex = n);
+                }
+                
+                function showSlides(n) {
+                  let i;
+                  let slides = document.getElementsByClassName("slideSobre");
+                  let dots = document.getElementsByClassName("dot");
+                  if (n > slides.length) {slideIndex = 1}    
+                  if (n < 1) {slideIndex = slides.length}
+                  for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";  
+                  dots[slideIndex-1].className += " active";
+                }
+                </script>
+        </main>
 </body>
 
 </html>
