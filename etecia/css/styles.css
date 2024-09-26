@@ -144,7 +144,7 @@
 
 /* tela login */
 .lBody {
-  background: linear-gradient(to right, rgb(212, 15, 137), rgb(212, 15, 137), rgb(254, 255, 254));
+  background: linear-gradient(to right, rgb(211, 13, 112), rgb(211, 13, 112), rgb(254, 255, 254));
   font-family: Arial, Helvetica, sans-serif;
   align-items: end;
   margin-top: 5%;
@@ -257,19 +257,22 @@ span.psw {
 }
 
 .mSobre {
-  margin-top: 5%;
-  margin-right: 12%;
+  background-color: rgb(255, 255, 255);
+  margin-left: 5%;
+  margin-top: 2.5%;
+  margin-right: 6%;
   max-width: 1700px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 50px 50px;
+  border-radius: 3%;
 }
 
 /*  slide da página de sobre  */
 
 .slideSobre {
-  border: 10px solid black;
+  border: 5px solid rgb(99, 99, 99);
   border-radius: 8px;
 }
 
@@ -317,8 +320,8 @@ span.psw {
 }
 
 .txtSobre {
-  font: 400 18px "Roboto", sans-serif;
+  font: 600 18px "Roboto", sans-serif;
   text-decoration: none;
-  color: rgb(255, 255, 255);
-  padding: 40px 160px 64px;
+  color: rgb(0, 0, 0);
+  padding: 40px 16px 64px;
 }
