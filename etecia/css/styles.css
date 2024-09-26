@@ -251,40 +251,27 @@ span.psw {
   }
 }
 
-
-
 /* página sobre */
 .bSobre {
   background-color: #717171;
 }
-.text-sobre-container{
+
+.mSobre {
+  margin-top: 5%;
+  margin-right: 12%;
+  max-width: 1700px;
   display: flex;
   align-items: center;
-  justify-content: start;
-}
-.txtSobre{
-  font: 400 18px "Roboto", sans-serif;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
+  justify-content: space-between;
+  padding: 0 16px;
 }
 
 /*  slide da página de sobre  */
-
-.sobre-container {
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  margin-top: 5%;
-  margin-right: 12%;
-  padding: 0;
-
-}
 
 .slideSobre {
   border: 10px solid black;
   border-radius: 8px;
 }
-
 
 .btnPrev2,
 .btnNext2 {
@@ -319,4 +306,19 @@ span.psw {
 .active,
 .dot:hover {
   background-color: #717171;
+}
+
+/* texto da página sobre */
+
+.text-sobre-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.txtSobre {
+  font: 400 18px "Roboto", sans-serif;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 40px 160px 64px;
 }
