@@ -14,74 +14,69 @@
     <main class="mSobre">
         <div class="text-sobre-container">
             <p class="txtSobre">
-            Fundada no segundo semestre de 2010 a ETEC Irmã Agostina é
-            uma escola conhecida pela
-            qualidade de ensino,
-            que faz parte do Centro Paula Souza e ferece ensino médio integrado e cursos técnicos nas áreas de
-            gestão, saúde e tecnologia. Apresentando resultados fantásticos como uma das melhores escolas públicas
-            no ENEM, a melhor escola pública de São Paulo segundo o IDEB, centenas de alunos aprovados nas melhores
-            universidades do país e diversos alunos qualificados atuando no mercado de trabalho.</p>
+                Fundada no segundo semestre de 2010 a ETEC Irmã Agostina é
+                uma escola conhecida pela
+                qualidade de ensino,
+                que faz parte do Centro Paula Souza e ferece ensino médio integrado e cursos técnicos nas áreas de
+                gestão, saúde e tecnologia. Apresentando resultados fantásticos como uma das melhores escolas públicas
+                no ENEM, a melhor escola pública de São Paulo segundo o IDEB, centenas de alunos aprovados nas melhores
+                universidades do país e diversos alunos qualificados atuando no mercado de trabalho.</p>
         </div>
         <div class="sobre-container">
             <div class="slideSobre fade">
                 <div class="numbertext">1 / 3</div>
-                <img src="images/etecia_frente.jpg"height="550" width="1000" >
+                <img src="images/etecia_frente.jpg" height="550" width="1000">
                 <div class="txtSlide">Frente da etec</div>
-              </div>
-              
-              <div class="slideSobre fade">
+            </div>
+            <div class="slideSobre fade">
                 <div class="numbertext">2 / 3</div>
                 <img src="images/eteciaft.jpg" height="550" width="1000">
                 <div class="txtSlide">Atrás da etec</div>
-              </div>
-              
-              <div class="slideSobre fade">
+            </div>
+            <div class="slideSobre fade">
                 <div class="numbertext">3 / 3</div>
                 <img src="images/backhd2.jpg" height="550" width="1000">
                 <div class="txtSlide">Caption Three</div>
-              </div>
-              
-              <a class="btnPrev2" onclick="plusSlides(-1)">&#10094;</a>
-              <a class="btnNext2" onclick="plusSlides(1)">&#10095;</a>
-              
-              </div>
-              <br>
-
-              <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span> 
-                <span class="dot" onclick="currentSlide(2)"></span> 
-                <span class="dot" onclick="currentSlide(3)"></span> 
-              </div>       
             </div>
-            <script>
-                let slideIndex = 1;
-                showSlides(slideIndex);
-                
-                function plusSlides(n) {
-                  showSlides(slideIndex += n);
+            <a class="btnPrev2" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="btnNext2" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        </div>
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("slideSobre");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
                 }
-                
-                function currentSlide(n) {
-                  showSlides(slideIndex = n);
-                }
-                
-                function showSlides(n) {
-                  let i;
-                  let slides = document.getElementsByClassName("slideSobre");
-                  let dots = document.getElementsByClassName("dot");
-                  if (n > slides.length) {slideIndex = 1}    
-                  if (n < 1) {slideIndex = slides.length}
-                  for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";  
-                  }
-                  for (i = 0; i < dots.length; i++) {
+                for (i = 0; i < dots.length; i++) {
                     dots[i].className = dots[i].className.replace(" active", "");
-                  }
-                  slides[slideIndex-1].style.display = "block";  
-                  dots[slideIndex-1].className += " active";
                 }
-                </script>
-        </main>
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+        </script>
+    </main>
 </body>
 
 </html>
