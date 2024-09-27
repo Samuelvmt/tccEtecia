@@ -22,18 +22,18 @@
                 no ENEM, a melhor escola pública de São Paulo segundo o IDEB, centenas de alunos aprovados nas melhores
                 universidades do país e diversos alunos qualificados atuando no mercado de trabalho.</p>
         </div>
-        <div class="sobre-container">
-            <div class="slideSobre fade">
+        <div class="slide-sobre-container">
+            <div class="slide-sobre fade">
                 <div class="numbertext">1 / 3</div>
                 <img src="images/etecia_frente.jpg" height="550" width="1000">
                 <div class="txtSlide">Frente da etec</div>
             </div>
-            <div class="slideSobre fade">
+            <div class="slide-sobre fade">
                 <div class="numbertext">2 / 3</div>
                 <img src="images/eteciaft.jpg" height="550" width="1000">
                 <div class="txtSlide">Atrás da etec</div>
             </div>
-            <div class="slideSobre fade">
+            <div class="slide-sobre fade">
                 <div class="numbertext">3 / 3</div>
                 <img src="images/backhd2.jpg" height="550" width="1000">
                 <div class="txtSlide">Caption Three</div>
@@ -42,11 +42,6 @@
             <a class="btnNext2" onclick="plusSlides(1)">&#10095;</a>
         </div>
         <br>
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
         </div>
         <script>
             let slideIndex = 1;
@@ -62,7 +57,7 @@
 
             function showSlides(n) {
                 let i;
-                let slides = document.getElementsByClassName("slideSobre");
+                let slides = document.getElementsByClassName("slide-sobre");
                 let dots = document.getElementsByClassName("dot");
                 if (n > slides.length) { slideIndex = 1 }
                 if (n < 1) { slideIndex = slides.length }

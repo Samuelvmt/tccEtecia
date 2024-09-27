@@ -5,15 +5,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-/* corpo */
-.body-image {
-  width: 100%;
-  height: auto;
-}
+iframe { vertical-align:bottom; }
 
 /* cabeçalho */
 .header {
+  background-color: #020202;
   position: fixed;
   background-image: url("../images/blackbk.jpg");
   background-size: 100%;
@@ -21,6 +17,8 @@
   height: 100%;
   top: 0;
   padding: 15px 500px;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .header-nav {
@@ -60,6 +58,8 @@
   width: 100%;
   height: 100%;
   bottom: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .mbl-link {
@@ -97,7 +97,22 @@
   margin-left: 20px;
 }
 
-/* slides */
+/* home */
+.body-home {
+  background-color: #000000;
+}
+
+/* slide home */
+/* Slideshow container */
+.slide-home-container {
+  max-height: 770px;
+  height: 752px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+}
+
 /* botões do slide  */
 .btnPrev,
 .btnNext {
@@ -120,13 +135,13 @@
   border-radius: 3px 0 0 3px;
 }
 
-/* The dots/bullets/indicators */
-.active,
-.dot:hover {
-  background-color: #717171;
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* fading slide */
+/* Fading animation */
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
@@ -141,6 +156,100 @@
     opacity: 1
   }
 }
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+
+  .prev,
+  .next,
+  .text {
+    font-size: 11px
+  }
+}
+
+/* página sobre */
+.bSobre {
+  background-color: #717171;
+}
+
+.mSobre {
+  background-color: rgb(255, 255, 255);
+  margin-left: 5%;
+  margin-top: 2.5%;
+  margin-right: 6%;
+  max-width: 1700px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 50px;
+  border-radius: 3%;
+}
+
+/*  slide da página de sobre  */
+.slide-sobre {
+  border: 5px solid rgb(99, 99, 99);
+  border-radius: 8px;
+}
+
+/* Caption texo */
+.txtSlide {
+  color: #020202;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  width: 55%;
+  text-align: center;
+}
+
+.btnPrev2,
+.btnNext2 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* posicionar o botão direito do slide */
+.btnNext2 {
+  margin-bottom: 0.5%;
+  margin-right: 0.5%;
+  border-radius: 3px 0 0 3px;
+}
+
+/* posicionar o botão esquerdo do slide */
+.btnPrev2 {
+  margin-bottom: 0.5%;
+  margin-right: 50.9%;
+  border-radius: 3px 0 0 3px;
+}
+
+/* The dots/bullets/indicators */
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* texto da página sobre */
+.text-sobre-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.txtSobre {
+  font: 600 18px "Roboto", sans-serif;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 40px 16px 64px;
+}
+
 
 /* tela login */
 .lBody {
@@ -248,87 +357,4 @@ span.psw {
   .cancelbtn {
     width: 80%;
   }
-}
-
-/* página sobre */
-.bSobre {
-  background-color: #717171;
-}
-
-.mSobre {
-  background-color: rgb(255, 255, 255);
-  margin-left: 5%;
-  margin-top: 2.5%;
-  margin-right: 6%;
-  max-width: 1700px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 50px 50px;
-  border-radius: 3%;
-}
-
-/*  slide da página de sobre  */
-.slideSobre {
-  border: 5px solid rgb(99, 99, 99);
-  border-radius: 8px;
-}
-
-/* Caption texo */
-.txtSlide {
-  color: #020202;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  width: 55%;
-  text-align: center;
-}
-
-.btnPrev2,
-.btnNext2 {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* posicionar o botão direito do slide */
-.btnNext2 {
-  margin-bottom: 0.5%;
-  margin-right: 0.5%;
-  border-radius: 3px 0 0 3px;
-}
-
-/* posicionar o botão esquerdo do slide */
-.btnPrev2 {
-  margin-bottom: 0.5%;
-  margin-right: 50.9%;
-  border-radius: 3px 0 0 3px;
-}
-
-/* The dots/bullets/indicators */
-.active,
-.dot:hover {
-  background-color: #717171;
-}
-
-/* texto da página sobre */
-.text-sobre-container {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-}
-
-.txtSobre {
-  font: 600 18px "Roboto", sans-serif;
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  padding: 40px 16px 64px;
 }
