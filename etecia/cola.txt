@@ -1,0 +1,3 @@
+<img src="images/etecialogo.png" class="etecia-link" width="130" height="60">
+                <a href="mobilePage.html" class="mbl-link" target="iframe_b"><img src="images/mobileapp.png"
+                        alt="link-mobile-app" height="58" width="130"></a>

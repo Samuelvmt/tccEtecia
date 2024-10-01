@@ -1,14 +1,12 @@
 <?php 
 
 	$server_name = 'localhost';
-	$user_name = 'etecia';
-	$password = '123456';
-	$db_name = 'dbetec';
+	$user_name = 'etecia1';
+	$password = '1234567';
+	$db_name = 'dbEscola';
 
-	$connections = new mysqli($server_name,$user_name,$password,$db_name);
+	$connection = new mysqli($server_name,$user_name,$password,$db_name);
 
-	mysqli_set_charset($connections,"utf-8");
-
-	if (mysqli_connect_error()) {
-		echo "Erro ao conectar com o banco de dados" .mysql_connect_error();
+	if ($connection->connect_error) {
+		die("Erro ao conectar com o banco de dados: " . $connection->connect_error);
 	}
