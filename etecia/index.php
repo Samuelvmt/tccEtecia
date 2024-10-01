@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
+<?php 
+	include_once 'php/conexao.php';
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
