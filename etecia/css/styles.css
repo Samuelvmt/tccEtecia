@@ -65,7 +65,7 @@ iframe { vertical-align:bottom; }
 .mbl-link {
   align-items: center;
   justify-content: start;
-  padding: 0 20px;
+  padding: 20px 20px;
 }
 
 .sp-link {
@@ -91,10 +91,6 @@ iframe { vertical-align:bottom; }
   align-items: end;
   margin-right: 10px;
   margin-bottom: 5px;
-}
-
-.etecia-link {
-  margin-left: 20px;
 }
 
 /* home */
