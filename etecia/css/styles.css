@@ -165,11 +165,11 @@ iframe { vertical-align:bottom; }
 
 /* página sobre */
 .bSobre {
-  background-color: #717171;
+  background-color: #ffffff;
 }
 
 .mSobre {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(226, 189, 25);
   margin-left: 5%;
   margin-top: 2.5%;
   margin-right: 6%;
@@ -183,7 +183,7 @@ iframe { vertical-align:bottom; }
 
 /*  slide da página de sobre  */
 .slide-sobre {
-  border: 5px solid rgb(99, 99, 99);
+  border: 5px solid rgb(223, 222, 228);
   border-radius: 8px;
 }
 
