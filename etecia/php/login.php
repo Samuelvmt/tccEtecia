@@ -62,7 +62,7 @@ if ($login == "" || $login == null) {
         die();
     } else {
         setcookie("login", $login);
-        header("Location: index.php");
+        header("Location: teste.php");
         exit(); // É importante usar exit() após header()
     }
 }
