@@ -4,6 +4,10 @@ CREATE DATABASE dbescola;
 
 USE dbescola;
  
+
+
+
+
 CREATE TABLE tbProfessor (
 
     prof_id INT NOT NULL AUTO_INCREMENT,
@@ -76,10 +80,22 @@ CREATE TABLE tbAluno (
 
 );
  
+
 INSERT INTO tbAluno (nome, rg, cpf, dataNasc, sexo, end, email, tel_cel, nom_pai, nom_mae, resp) 
 
 VALUES ('Enzo Silva', '44.123.658-9', '375.143.023-12', '2008-10-05', 'M', 'Av dos Lagos 125', 'enzosilva@gmail.com', '95342-5088', 'Luiz Carlos', 'Maria Luisa', NULL);
  
+
+CREATE TABLE tbUsuario (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id_aluno INT NOT NULL,
+    login VARCHAR(50) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    FOREIGN KEY (id_aluno) REFERENCES tbAluno(aluno_id) ON DELETE CASCADE
+);
+
+INSERT INTO tbUsuario(id_aluno,login,senha)VALUES ('1','abud','123');
+
 CREATE TABLE tbTurma (
 
     turma_id INT NOT NULL AUTO_INCREMENT,
@@ -138,6 +154,8 @@ DESC tbTurma;
 
 DESC tbMatricula;
  
+DESC tbUsuario;
+
 -- Visualizando os registros das tabelas
 
 SELECT * FROM tbProfessor;
@@ -149,5 +167,7 @@ SELECT * FROM tbAluno;
 SELECT * FROM tbTurma;
 
 SELECT * FROM tbMatricula;
+
+SELECT * FROM tbUsuario;
 
  
