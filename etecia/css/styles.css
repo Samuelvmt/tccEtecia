@@ -1,24 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rock+Salt&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Raleway:wght@100..900&family=Roboto:wght@100;300;400;500;700;900&family=Rock+Salt&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-iframe { vertical-align:bottom; }
 
-/* cabeçalho */
+iframe {
+  vertical-align: bottom;
+}
+
+/* Cabeçalho */
 .header {
-  background-color: #020202;
-  position: fixed;
   background-image: url("../images/blackbk.jpg");
-  background-size: 100%;
+  position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
   padding: 15px 500px;
-  margin: 0;
-  box-sizing: border-box;
 }
 
 .header-nav {
@@ -28,166 +27,138 @@ iframe { vertical-align:bottom; }
   justify-content: space-between;
 }
 
-.outros-link {
-  font: 800 18px "Oswald", sans-serif;
+.outros-link,
+.etecia-link {
   text-transform: uppercase;
   text-decoration: none;
   color: rgb(211, 13, 112);
+}
+
+.outros-link {
+  font: 800 18px "Oswald", sans-serif;
 }
 
 .etecia-link {
   font: 400 28px "Oswald", sans-serif;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: rgb(211, 13, 112);
-  align-items: start;
 }
 
 .outros-link:hover {
   color: rgba(202, 132, 187, 0.8);
-  transition: 0.2s;
+  transition: color 0.2s;
 }
 
-/* rodapé */
+/* Rodapé */
 .footer {
   background: rgb(0, 0, 0);
   color: white;
   padding: 15px 10px;
-  border: 0px;
   font-weight: bold;
   width: 100%;
   height: 100%;
   bottom: 0;
-  margin: 0;
-  box-sizing: border-box;
 }
 
-.mbl-link {
-  align-items: center;
-  justify-content: start;
-  padding: 20px 20px;
-}
-
-.sp-link {
-  align-items: center;
-  justify-content: center;
-  margin-left: 30px;
-}
-
+.mbl-link,
+.sp-link,
 .cps-link {
   align-items: center;
-  justify-content: center;
+}
+
+.insta-link,
+.yt-link {
+  float: right;
+  margin-bottom: 5px;
 }
 
 .insta-link {
-  float: right;
-  align-items: center;
   margin-right: 40px;
-  margin-bottom: 5px;
 }
 
 .yt-link {
-  float: right;
-  align-items: end;
   margin-right: 10px;
-  margin-bottom: 5px;
 }
 
-/* home */
+/* Home */
 .body-home {
-  background-color: #000000;
+  background-color: #000;
 }
 
-/* slide home */
-/* Slideshow container */
+/* Slide Home */
 .slide-home-container {
   max-height: 770px;
   height: 752px;
   position: relative;
-  margin: 0;
-  padding: 0;
-  background-color: #000000;
+  background-color: #000;
 }
 
-/* botões do slide  */
+/* Botões do slide */
 .btnPrev,
-.btnNext {
+.btnNext,
+.btnPrev2,
+.btnNext2 {
   cursor: pointer;
   position: absolute;
   top: 50%;
-  width: auto;
   padding: 16px;
-  color: rgb(255, 255, 255);
+  color: #fff;
   font-weight: bold;
   font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+  transition: background-color 0.6s ease;
+  border-radius: 3px;
   user-select: none;
 }
 
-/* posicionar o botão direito do slide */
 .btnNext {
   right: 0;
-  border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
+.btnPrev:hover,
+.btnNext:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Fading animation */
+/* Animação de fading */
 .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+  animation: fade 1.5s;
 }
 
 @keyframes fade {
-  from {
-    opacity: .4
-  }
-
-  to {
-    opacity: 1
-  }
+  from { opacity: .4; }
+  to { opacity: 1; }
 }
 
-/* On smaller screens, decrease text size */
+/* Responsividade */
 @media only screen and (max-width: 300px) {
-
   .prev,
   .next,
   .text {
-    font-size: 11px
+    font-size: 11px;
   }
 }
 
-/* página sobre */
+/* Página Sobre */
 .bSobre {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .mSobre {
   background-color: rgb(226, 189, 25);
-  margin-left: 5%;
-  margin-top: 2.5%;
-  margin-right: 6%;
+  margin: 2.5% 6% 0 5%;
   max-width: 1700px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 50px 50px;
+  padding: 50px;
   border-radius: 3%;
 }
 
-/*  slide da página de sobre  */
+/* Slide da página de Sobre */
 .slide-sobre {
   border: 5px solid rgb(223, 222, 228);
   border-radius: 8px;
 }
 
-/* Caption texo */
+/* Texto da Slide */
 .txtSlide {
   color: #020202;
   font-size: 15px;
@@ -197,63 +168,19 @@ iframe { vertical-align:bottom; }
   text-align: center;
 }
 
-.btnPrev2,
-.btnNext2 {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* posicionar o botão direito do slide */
-.btnNext2 {
-  margin-bottom: 0.5%;
-  margin-right: 0.5%;
-  border-radius: 3px 0 0 3px;
-}
-
-/* posicionar o botão esquerdo do slide */
-.btnPrev2 {
-  margin-bottom: 0.5%;
-  margin-right: 50.9%;
-  border-radius: 3px 0 0 3px;
-}
-
-/* The dots/bullets/indicators */
-.active,
-.dot:hover {
-  background-color: #717171;
-}
-
-/* texto da página sobre */
-.text-sobre-container {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-}
-
+/* Texto da página Sobre */
 .txtSobre {
   font: 600 18px "Roboto", sans-serif;
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: #000;
   padding: 40px 16px 64px;
 }
 
-
-/* tela login */
+/* Tela Login */
 .lBody {
   background: linear-gradient(to right, rgb(0, 0, 0), #ff02c8, rgb(0, 0, 0));
   font-family: Arial, Helvetica, sans-serif;
-  align-items: end;
-  margin-top: 5%;
-  margin-right: 10%;
+  margin: 5% 10% 0;
 }
 
 .lMain {
@@ -263,13 +190,13 @@ iframe { vertical-align:bottom; }
 }
 
 .lForm {
-  border: 1px solid #000000;
+  border: 1px solid #000;
   border-radius: 10%;
 }
 
 .lLabel {
   margin: 8px 10%;
-  color: white;
+  color: #fff;
 }
 
 .lInput[type=text],
@@ -277,7 +204,6 @@ input[type=password] {
   width: 80%;
   padding: 12px 20px;
   margin: 8px 10%;
-  display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
@@ -287,18 +213,17 @@ input[type=password] {
 }
 
 .checkboxLabel {
-  color: white;
+  color: #fff;
 }
 
 .lButton {
   background-color: #04AA6D;
-  color: white;
+  color: #fff;
   padding: 14px 20px;
   margin: 8px 10%;
   border: none;
   cursor: pointer;
   width: 80%;
-  margin-left: 10%;
 }
 
 .lButton:hover {
@@ -306,14 +231,13 @@ input[type=password] {
 }
 
 .cancelbtn {
-  width: auto;
   padding: 10px 18px;
   background-color: #f44336;
 }
 
 .imgcontainer {
   text-align: center;
-  margin: 24px 0 12px 0;
+  margin: 24px 0 12px;
 }
 
 img.avatar {
@@ -339,10 +263,10 @@ span.psw {
 
 .hreSpan {
   text-decoration: none;
-  color: white;
+  color: #fff;
 }
 
-/* Change styles for span and cancel button on extra small screens */
+/* Responsividade Extra */
 @media screen and (max-width: 300px) {
   span.psw {
     display: block;

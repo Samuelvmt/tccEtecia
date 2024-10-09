@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <script src="function.js" defer></script>
+    <script src="javascript/slidehome.js" defer></script>
     <title>Etecia | Home</title>
 </head>
 
@@ -27,48 +28,6 @@
             <a class="btnNext" onclick="plusSlides(1)">&#10095;</a>
         </div>
         <br>
-
-        <script>
-            let slideIndex = 0;
-            let slideInterval;
-            const slides = document.getElementsByClassName("slide-home");
-            const dots = document.getElementsByClassName("dotz");
-
-            function showSlides() {
-                for (let i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                slideIndex++;
-                if (slideIndex > slides.length) slideIndex = 1;
-                for (let i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].className += " active";
-            }
-
-            function startSlideShow() {
-                slideInterval = setInterval(showSlides, 4000); // muda imagem a cada quatro segundos
-            }
-
-            function stopSlideShow() {
-                clearInterval(slideInterval);
-            }
-
-            function plusSlides(n) {
-                stopSlideShow(); // Parar a troca automática
-                slideIndex += n;
-                if (slideIndex > slides.length) slideIndex = 1;
-                if (slideIndex < 1) slideIndex = slides.length;
-                showSlides();
-                startSlideShow(); // Reiniciar a troca automática
-            }
-
-            document.addEventListener("DOMContentLoaded", () => {
-                showSlides();
-                startSlideShow();
-            });
-        </script>
     </main>
 </body>
 
