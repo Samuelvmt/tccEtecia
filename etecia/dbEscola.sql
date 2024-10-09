@@ -8,9 +8,9 @@ USE dbescola;
 
 
 
-CREATE TABLE tbProfessor (
+CREATE TABLE tbFuncionario (
 
-    prof_id INT NOT NULL AUTO_INCREMENT,
+    func_id INT NOT NULL AUTO_INCREMENT,
 
     nome VARCHAR(100) NOT NULL,
 
@@ -18,21 +18,25 @@ CREATE TABLE tbProfessor (
 
     email VARCHAR(70) NOT NULL,
 
-    sexo CHAR(1) NOT NULL,
-
-    tel_cel VARCHAR(10) NOT NULL,
+    tel VARCHAR(14) NOT NULL,
 
     end VARCHAR(80) NOT NULL,
 
-    disc VARCHAR(80) NOT NULL,
+    cep VARCHAR(9) NOT NULL,
 
-    PRIMARY KEY (prof_id)
+    bair VARCHAR(80) NOT NULL,
+
+    numer VARCHAR(3) NOT NULL,
+
+    cargo VARCHAR(50) NOT NULL,
+
+    PRIMARY KEY (func_id)
 
 );
  
-INSERT INTO tbProfessor (nome, cpf, email, sexo, tel_cel, end, disc) 
+INSERT INTO tbFuncionario (nome, cpf, email,tel, end, cep, bair, numer, cargo) 
 
-VALUES ('Jose Leal', '325.543.123-12', 'joseleal@gmail.com', 'M', '95342-5088', 'Rua do Limoeiro 15', 'Matematica');
+VALUES ('Jose Leal', '325.543.123-12', 'joseleal@gmail.com','95342-5088', 'Rua do Limoeiro', '04653-220', 'Limõezes','129', 'secretario');
  
 CREATE TABLE tbDisciplina (
 
@@ -100,7 +104,7 @@ CREATE TABLE tbTurma (
 
     turma_id INT NOT NULL AUTO_INCREMENT,
 
-    prof_id INT NOT NULL,
+    func_id INT NOT NULL,
 
     disc_id INT NOT NULL,
 
@@ -110,13 +114,13 @@ CREATE TABLE tbTurma (
 
     PRIMARY KEY (turma_id),
 
-    FOREIGN KEY (prof_id) REFERENCES tbProfessor(prof_id),
+    FOREIGN KEY (func_id) REFERENCES tbFuncionario(func_id),
 
     FOREIGN KEY (disc_id) REFERENCES tbDisciplina(disc_id)
 
 );
  
-INSERT INTO tbTurma (prof_id, disc_id, ini_data, fin_data) 
+INSERT INTO tbTurma (func_id, disc_id, ini_data, fin_data) 
 
 VALUES (1, 1, '2024-02-10', '2024-12-05');
  
@@ -144,7 +148,7 @@ VALUES (1, 1, '2024-01-21');
  
 -- Visualizando a estrutura das tabelas
 
-DESC tbProfessor;
+DESC tbFuncionario;
 
 DESC tbDisciplina;
 
@@ -158,7 +162,7 @@ DESC tbUsuario;
 
 -- Visualizando os registros das tabelas
 
-SELECT * FROM tbProfessor;
+SELECT * FROM tbFuncionario;
 
 SELECT * FROM tbDisciplina;
 
