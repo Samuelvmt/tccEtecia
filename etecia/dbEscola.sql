@@ -93,14 +93,13 @@ VALUES ('Enzo Silva', '44.123.658-9', '375.143.023-12', '2008-10-05', 'M', 'Av d
 CREATE TABLE tbUsuario (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     id_aluno INT NOT NULL,
-    nome VARCHAR(100) NOT NULL,
     login VARCHAR(50) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL,
     FOREIGN KEY (id_aluno) REFERENCES tbAluno(aluno_id) ON DELETE CASCADE
-    FOREIGN KEY (nome) REFERENCES tbAluno(nome) ON DELETE CASCADE
 );
 
 INSERT INTO tbUsuario(id_aluno,login,senha)VALUES ('1','abud','123');
+INSERT INTO tbUsuario(id_aluno,login,senha)VALUES ('2','abudab','1234');
 
 CREATE TABLE tbTurma (
 
