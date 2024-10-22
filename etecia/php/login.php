@@ -4,7 +4,7 @@ $entrar = $_POST["entrar"];
 $senha = $_POST['senha'];
 
 // Estabelecendo a conexão com o banco de dados
-$connect = new mysqli("localhost", "etecia", "123456", "dbEscola");
+$connect = new mysqli("localhost", "etecia1", "1234567", "dbEscola");
 
 // Verificando se a conexão foi bem-sucedida
 if ($connect->connect_error) {
@@ -29,7 +29,7 @@ if ($login == "" || $login == null) {
         die();
     } else {
         setcookie("login", $login);
-        header("Location: teste.php");
+        header("Location: ../tempaluno.php");
         exit(); // É importante usar exit() após header()
     }
 }

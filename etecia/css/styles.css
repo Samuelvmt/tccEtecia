@@ -8,6 +8,7 @@
 
 iframe {
   vertical-align: bottom;
+  margin: 0; border: 0; padding: 0;
 }
 
 /* Cabeçalho */
@@ -31,7 +32,7 @@ iframe {
 .etecia-link {
   text-transform: uppercase;
   text-decoration: none;
-  color: rgb(211, 13, 112);
+  color:#d1530a;
 }
 
 .outros-link {
@@ -43,7 +44,7 @@ iframe {
 }
 
 .outros-link:hover {
-  color: rgba(202, 132, 187, 0.8);
+  color: rgba(241, 235, 240, 0.8);
   transition: color 0.2s;
 }
 
@@ -59,8 +60,7 @@ iframe {
 }
 
 .mbl-link,
-.sp-link,
-.cps-link {
+.sp-link {
   align-items: center;
   margin-left: 2%;
 }
@@ -179,7 +179,7 @@ iframe {
 
 /* Tela Login */
 .lBody {
-  background: linear-gradient(to right, rgb(0, 0, 0), #ff02c8, rgb(0, 0, 0));
+  background: linear-gradient(to right, rgb(0, 0, 0), #ff3d02, rgb(0, 0, 0));
   font-family: Arial, Helvetica, sans-serif;
   margin: 5% 10% 0;
 }

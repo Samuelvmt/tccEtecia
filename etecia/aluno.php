@@ -1,3 +1,6 @@
+
+
+
 <?php
 // Conexão ao banco de dados
 $servername = "localhost";
