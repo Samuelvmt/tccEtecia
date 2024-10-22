@@ -88,6 +88,10 @@ CREATE TABLE tbAluno (
 INSERT INTO tbAluno (nome, rg, cpf, dataNasc, sexo, end, email, tel_cel, nom_pai, nom_mae, resp) 
 
 VALUES ('Enzo Silva', '44.123.658-9', '375.143.023-12', '2008-10-05', 'M', 'Av dos Lagos 125', 'enzosilva@gmail.com', '95342-5088', 'Luiz Carlos', 'Maria Luisa', NULL);
+
+INSERT INTO tbAluno (nome, rg, cpf, dataNasc, sexo, end, email, tel_cel, nom_pai, nom_mae, resp) 
+
+VALUES ('jalin', '54.123.658-9', '455.143.023-12', '2010-10-05', 'M', 'Av dos Lagos 126', 'jalin@gmail.com', '95352-5074', 'rogerio', 'veronica', NULL);
  
 
 CREATE TABLE tbUsuario (
