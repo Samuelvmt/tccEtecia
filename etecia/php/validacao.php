@@ -19,12 +19,12 @@ if ($connect->connect_error) {
 
 // Verificando campos vazios
 if (empty($login)) {
-    header("Location: login.html?error=campo_login");
+    echo "<script>alert('O campo login deve ser preenchido'); window.location.href='login.html';</script>";
     exit();
 }
 
 if (empty($senha)) {
-    header("Location: login.html?error=campo_senha");
+    echo "<script>alert('O campo senha deve ser preenchido'); window.location.href='login.html';</script>";
     exit();
 }
 
@@ -38,7 +38,7 @@ $verifica = $connect->query($query);
 
 // Verificando o resultado da consulta
 if ($verifica->num_rows <= 0) {
-    header("Location: login.html?error=login_incorreto");
+    echo "<script>alert('Login ou senha incorretos'); window.location.href='login.html';</script>";
     exit();
 } else {
     setcookie("login", $login);
