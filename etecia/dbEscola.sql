@@ -4,10 +4,6 @@ CREATE DATABASE dbescola;
 
 USE dbescola;
  
-
-
-
-
 CREATE TABLE tbFuncionario (
 
     func_id INT NOT NULL AUTO_INCREMENT,

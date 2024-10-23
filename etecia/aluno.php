@@ -11,7 +11,7 @@
 </head>
 <body>
 <main class="mAluno">
-<div class="dAluno">
+<div class="c">
 <?php
 // Conexão ao banco de dados
 $servername = "localhost";
@@ -21,7 +21,10 @@ $dbname = "dbEscola";
 
 // Cria a conexão
 $connect = new mysqli($servername, $username, $password, $dbname);
-
+?>
+</div>
+<div class="dAluno">
+<?php
 // Verifica a conexão
 if ($connect->connect_error) {
     die("Conexão falhou: " . $connect->connect_error);
