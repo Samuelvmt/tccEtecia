@@ -150,7 +150,7 @@ iframe {
   background-color: #fff;
 }
 
-.mSobre {
+.mSobre{
   background-color: rgb(226, 189, 25);
   margin: 2.5% 6% 0 5%;
   max-width: 1700px;
@@ -290,67 +290,14 @@ span.psw {
 
 
 /* Página Aluno */
-.body-aluno {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 5% 10% 0;
-}
 
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  margin: 5% 10% 0;
+.mAluno{
+  background-color: rgb(118, 150, 160);
+  margin: 2.5% 6% 0 5%;
+  max-width: 1700px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  border-radius: 3%;
 }
-
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.subnav {
-  float: left;
-  overflow: hidden;
-}
-
-.subnav .subnavbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.navbar a:hover,
-.subnav:hover .subnavbtn {
-  background-color: red;
-}
-
-.subnav-content {
-  display: none;
-  position: absolute;
-  background-color: rgb(112, 111, 111);
-  width: auto;
-  z-index: 1;
-}
-
-.subnav-content a {
-  float: left;
-  color: white;
-  text-decoration: none;
-}
-
-.subnav-content a:hover {
-  background-color: #eee;
-  color: black;
-}
-
-.subnav:hover .subnav-content {
-  display: block;
-}
-

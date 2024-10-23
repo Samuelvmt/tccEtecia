@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="function.js"></script>
+    <script src="javascript/slidesobre.js"></script>
     <title>Escola | Sobre</title>
 </head>
 
@@ -14,7 +14,9 @@
     <main class="mSobre">
         <div class="text-sobre-container">
             <p class="txtSobre">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum ad at odit dolorum nihil, fuga quia quibusdam aliquam eum fugiat iure aperiam eaque natus laborum maxime, consequatur fugit optio tempore.</p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum ad at odit dolorum nihil, fuga quia
+                quibusdam aliquam eum fugiat iure aperiam eaque natus laborum maxime, consequatur fugit optio tempore.
+            </p>
         </div>
         <div class="slide-sobre-container">
             <div class="slide-sobre fade">
@@ -32,38 +34,10 @@
                 <img src="images/backhd2.jpg" height="550" width="1000">
                 <div class="txtSlide">Caption Three</div>
             </div>
-           
+
         </div>
         <br>
         </div>
-        <script>
-            let slideIndex = 1;
-            showSlides(slideIndex);
-
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
-            }
-
-            function currentSlide(n) {
-                showSlides(slideIndex = n);
-            }
-
-            function showSlides(n) {
-                let i;
-                let slides = document.getElementsByClassName("slide-sobre");
-                let dots = document.getElementsByClassName("dot");
-                if (n > slides.length) { slideIndex = 1 }
-                if (n < 1) { slideIndex = slides.length }
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].className += " active";
-            }
-        </script>
     </main>
 </body>
 

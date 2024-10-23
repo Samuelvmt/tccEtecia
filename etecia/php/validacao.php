@@ -42,7 +42,7 @@ if ($verifica->num_rows <= 0) {
     exit();
 } else {
     setcookie("login", $login);
-    header("Location: ../tempaluno.php");
+    header("Location: ../aluno.php");
     exit(); // É importante usar exit() após header()
 }
 
