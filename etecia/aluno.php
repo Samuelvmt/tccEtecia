@@ -41,10 +41,12 @@
 
     <div id="Aluno" class="tabcontent">
         <h3>Aluno</h3>
+        <!-- Espaço de Avisos -->
     </div>
 
     <div id="Boletim" class="tabcontent">
         <h3>Boletim</h3>
+        <!-- Tabela relacionada ao boletim -->
         <div class="dAluno">
             <?php
             // Defina o ID do usuário que você deseja buscar
@@ -64,9 +66,11 @@
                 // Começa a tabela HTML
                 echo "<table border='1'>
                       <tr>
-                          <th>ID Aluno</th>
-                          <th>Nome do Aluno</th>
-                          <th>RG</th>
+                          <th>Componentes curriculares</th>
+                          <th>Aulas dadas</th>
+                          <th>Faltas</th>
+                          <th>Faltas permitidas</th>
+                          <th>Frequência total</th>
                       </tr>";
                 // Loop para exibir os dados
                 while ($row = $result->fetch_assoc()) {
@@ -91,13 +95,13 @@
 
     <div id="AulaseFaltas" class="tabcontent">
         <h3>Aulas e faltas</h3>
-        <p>Tokyo is the capital of Japan.</p>
+        <!-- Tabela relacionada a aulas e faltas -->
     </div>
 
     <div id="Matricula" class="tabcontent">
         <h3>Matrícula</h3>
         <div class="dAluno">
-            <!-- Aqui você pode incluir outra lógica ou tabela relacionada a Matrícula -->
+            <!-- Tabela relacionada a Matrícula -->
         </div>
     </div>
 </main>
