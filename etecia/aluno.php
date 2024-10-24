@@ -11,6 +11,14 @@
 </head>
 <body>
 <main class="mAluno">
+
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'Aluno')" id="defaultOpen">Aluno</button>
+        <button class="tablinks" onclick="openCity(event, 'Boletim')">Boletim</button>
+        <button class="tablinks" onclick="openCity(event, 'AulaseFaltas')">Aulas e faltas</button>
+        <button class="tablinks" onclick="openCity(event, 'Matricula')">Matrícula</button>
+    </div>
+
     <div class="conexaoAluno">
         <?php
         // Configuração da conexão ao banco de dados
@@ -29,16 +37,6 @@
         ?>
     </div>
 
-    <h2>Vertical Tabs</h2>
-    <p>Click on the buttons inside the tabbed menu:</p>
-
-    <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'Aluno')" id="defaultOpen">Aluno</button>
-        <button class="tablinks" onclick="openCity(event, 'Boletim')">Boletim</button>
-        <button class="tablinks" onclick="openCity(event, 'AulaseFaltas')">Aulas e faltas</button>
-        <button class="tablinks" onclick="openCity(event, 'Matricula')">Matrícula</button>
-    </div>
-
     <div id="Aluno" class="tabcontent">
         <h3>Aluno</h3>
         <!-- Espaço de Avisos -->
@@ -50,7 +48,7 @@
         <div class="dAluno">
             <?php
             // Defina o ID do usuário que você deseja buscar
-            $id_usuario_especifico = 'id'; // Altere este valor conforme necessário
+            $id_usuario_especifico = '1'; // Altere este valor conforme necessário
             
             // Query para selecionar os dados da tabela 'tbUsuario' e 'tbAluno'
             $stmt = $connect->prepare("SELECT u.id_aluno, a.nome AS aluno_nome, a.rg AS rg
