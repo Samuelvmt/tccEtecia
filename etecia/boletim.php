@@ -1,53 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="function.js"></script>
 </head>
 <body>
+    <div>
 <?php
-$login = isset($_POST["login"]) ? $_POST["login"] : '';
-$entrar = isset($_POST["entrar"]);
-$senha = isset($_POST['senha']) ? $_POST['senha'] : '';
+// Conexão ao banco de dados
+$servername = "localhost";
+$username = "etecia1";
+$password = "1234567";
+$dbname = "dbEscola";
 
-// Estabelecendo a conexão com o banco de dados
-$connect = new mysqli("localhost", "etecia1", "1234567", "dbEscola");
-
-// Verificando se a conexão foi bem-sucedida
+// Cria a conexão
+$connect = new mysqli($servername, $username, $password, $dbname);
+?>
+</div>
+<div class="dAluno">
+<?php
+// Verifica a conexão
 if ($connect->connect_error) {
-    die("Erro na conexão: " . $connect->connect_error);
+    die("Conexão falhou: " . $connect->connect_error);
 }
-
-// Verificando campos vazios
-if (empty($login)) {
-    echo "<script>alert('O campo login deve ser preenchido'); window.location.href='login.php';</script>";
-    exit();
-}
-
-if (empty($senha)) {
-    echo "<script>alert('O campo senha deve ser preenchido'); window.location.href='login.php';</script>";
-    exit();
-}
-
-// Protegendo contra injeção SQL
-$login = $connect->real_escape_string($login);
-$senha = $connect->real_escape_string($senha);
-
-// Realizando a consulta
-$query = "SELECT * FROM tbUsuario WHERE login = '$login' AND senha = '$senha'";
-$verifica = $connect->query($query);
-
-// Verificando o resultado da consulta
-if ($verifica->num_rows <= 0) {
-    echo "<script>alert('Login ou senha incorretos'); window.location.href='login.php';</script>";
-    exit();
+// Defina o ID do usuário que você deseja buscar
+$id_usuario_especifico = 'id'; // Altere este valor conforme necessário
+// Query para selecionar os dados da tabela 'tbUsuario' e 'tbAluno'
+$sql = "SELECT u.id_aluno, a.nome AS aluno_nome, a.rg AS rg
+        FROM tbUsuario u 
+        LEFT JOIN tbAluno a ON u.id_aluno = a.aluno_id
+        WHERE u.id = $id_usuario_especifico";  // Busca específica
+$result = $connect->query($sql);
+// Verifica se há resultados
+if ($result->num_rows > 0) {
+      // Começa a tabela HTML
+      echo "<table border='1'>
+      <tr>
+          <th>Componente curricular</th>
+          <th>Aulas dadas</th>
+          <th>Faltas</th>
+          <th>Faltas permitidas</th>
+          <th>Frequência total</th>
+      </tr>";
+    // Loop para exibir os dados
+    if($row = $result->fetch_assoc()) {
+        echo "<tr>
+                <td>" . $row["id_aluno"] . "</td>
+                <td>" . $row["aluno_nome"] . "</td>
+                <td>" . $row["rg"] . "</td>
+              </tr>";
+    }   
+    // Fecha a tabela
+    echo "</table>";
 } else {
-    setcookie("login", $login);
-    header("Location: ../aluno.php");
-    exit(); // É importante usar exit() após header()
+    echo "0 resultados";
 }
-
-// Fechando a conexão
+// Fecha a conexão
 $connect->close();
 ?>
+</div>
 </body>
 </html>
