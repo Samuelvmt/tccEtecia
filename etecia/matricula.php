@@ -10,8 +10,12 @@ if ($connect->connect_error) {
     die("Erro na conexão: " . $connect->connect_error);
 }
 // Realizando a consulta
-$query = "SELECT * FROM tbMatricula WHERE login = '$login' AND senha = '$senha'";
-$verifica = $connect->query($query);
+
+$squery = "SELECT m.mat_id, m.id AS aluno_id, a.data AS mat_data
+        FROM tbMatricula m 
+        LEFT JOIN tbAluno a ON u.id_aluno = a.aluno_id";
+
+$verifica = $connect->query($squery);
 
 // Verificando o resultado da consulta
 if ($verifica->num_rows <= 0) {

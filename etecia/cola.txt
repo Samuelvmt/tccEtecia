@@ -1,3 +1,102 @@
 <img src="images/etecialogo.png" class="etecia-link" width="130" height="60">
                 <a href="mobilePage.html" class="mbl-link" target="iframe_b"><img src="images/mobileapp.png"
                         alt="link-mobile-app" height="58" width="130"></a>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="function.js" defer></script>
+    <title>Escola</title>
+</head>
+<body>
+<main class="mAluno">
+<div class="c">
+<?php
+// Conexão ao banco de dados
+$servername = "localhost";
+$username = "etecia1";
+$password = "1234567";
+$dbname = "dbEscola";
+
+// Cria a conexão
+$connect = new mysqli($servername, $username, $password, $dbname);
+?>
+</div>
+<div class="dAluno">
+<?php
+// Verifica a conexão
+if ($connect->connect_error) {
+    die("Conexão falhou: " . $connect->connect_error);
+}
+// Defina o ID do usuário que você deseja buscar
+$id_usuario_especifico = 'id'; // Altere este valor conforme necessário
+// Query para selecionar os dados da tabela 'tbUsuario' e 'tbAluno'
+$sql = "SELECT u.id_aluno, a.nome AS aluno_nome, a.rg AS rg
+        FROM tbUsuario u 
+        LEFT JOIN tbAluno a ON u.id_aluno = a.aluno_id
+        WHERE u.id = $id_usuario_especifico";  // Busca específica
+$result = $connect->query($sql);
+// Verifica se há resultados
+if ($result->num_rows > 0) {
+      // Começa a tabela HTML
+      echo "<table border='1'>
+      <tr>
+          <th>ID Aluno</th>
+          <th>Nome do Aluno</th>
+          <th>RG</th>
+      </tr>";
+    // Loop para exibir os dados
+    if($row = $result->fetch_assoc()) {
+        echo "<tr>
+                <td>" . $row["id_aluno"] . "</td>
+                <td>" . $row["aluno_nome"] . "</td>
+                <td>" . $row["rg"] . "</td>
+              </tr>";
+    }   
+    // Fecha a tabela
+    echo "</table>";
+} else {
+    echo "0 resultados";
+}
+// Fecha a conexão
+$connect->close();
+?>
+</div>
+</main>
+</body>
+</html>
+
+
+/* Página Aluno */
+.mAluno{
+  background-color: rgb(118, 150, 160);
+  margin: 2.5% 6% 0 5%;
+  max-width: 1700px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  border-radius: 3%;
+}
+
+/* Tabela da página aluno */
+.tAluno {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
