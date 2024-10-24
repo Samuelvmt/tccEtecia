@@ -11,7 +11,7 @@
 </head>
 <body class="lBody">
   <main class="lMain">
-    <img src="images/logo.png" class="lLogo">
+    <img src="" class="lLogo">
 
     <form action="php/validacao.php" method="post"  class="lForm" style="background-color: rgba(0, 0, 0, 0.8);">
       <div class="imgcontainer">

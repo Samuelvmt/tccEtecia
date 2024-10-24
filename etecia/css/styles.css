@@ -34,7 +34,7 @@ iframe {
 .etecia-link {
   text-transform: uppercase;
   text-decoration: none;
-  color: #d1530a;
+  color: #a89f9f;
 }
 
 .outros-link {
@@ -46,7 +46,7 @@ iframe {
 }
 
 .outros-link:hover {
-  color: rgba(241, 235, 240, 0.8);
+  color: rgba(243, 237, 242, 0.8);
   transition: color 0.2s;
 }
 
@@ -150,7 +150,7 @@ iframe {
   background-color: #fff;
 }
 
-.mSobre{
+.mSobre {
   background-color: rgb(226, 189, 25);
   margin: 2.5% 6% 0 5%;
   max-width: 1700px;
@@ -288,10 +288,8 @@ span.psw {
   }
 }
 
-
 /* Página aluno */
-
-.mAluno{
+.mAluno {
   background-color: rgb(118, 150, 160);
   margin: 2.5% 6% 0 5%;
   max-width: 1700px;
@@ -305,10 +303,10 @@ span.psw {
 /* estilo do tab */
 .tab {
   float: left;
-  border: 1px solid #ccc;
+  border: 1px solid #5f5e5e;
   background-color: #f1f1f1;
   width: 30%;
-  height: 300px;
+  height: 500px;
   font: 600 18px "Roboto", sans-serif;
 }
 
@@ -319,30 +317,30 @@ span.psw {
   color: black;
   padding: 22px 16px;
   width: 100%;
-  border: none;
+  border: 1px;
   outline: none;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
   transition: 0.3s;
-  font-size: 17px;
+  font: 600 12px "Roboto", sans-serif;
 }
 
-/* Change background color of buttons on hover */
+/* Mudar cor dos botões ao passar o mouse */
 .tab button:hover {
   background-color: #ddd;
 }
 
-/* Create an active/current "tab button" class */
+/* Mudar a cor do botão selecionado */
 .tab button.active {
   background-color: #ccc;
 }
 
-/* Style the tab content */
+/* estilo do conteúdo do tab */
 .tabcontent {
-  float: left;
+  float: center;
   padding: 0px 12px;
   border: 1px solid #ccc;
-  width: 70%;
+  width: auto;
   border-left: none;
-  height: 300px;
+  height: 500px;
 }

@@ -16,11 +16,15 @@
 <p>Click on the buttons inside the tabbed menu:</p>
 
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'Boletim')"></button>
-  <button class="tablinks" onclick="openCity(event, 'Boletim')" id="defaultOpen">Boletim</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Aulas e faltas</button>
+  <button class="tablinks" onclick="openCity(event, 'Aluno')" id="defaultOpen">Aluno</button>
+  <button class="tablinks" onclick="openCity(event, 'Boletim')" >Boletim</button>
+  <button class="tablinks" onclick="openCity(event, 'AulaseFaltas')">Aulas e faltas</button>
   <button class="tablinks" onclick="openCity(event, 'Matricula')">Matrícula</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Avisos</button>
+</div>
+
+<div id="Aluno" class="tabcontent">
+  <h3>Aluno</h3>
+  
 </div>
 
 <div id="Boletim" class="tabcontent">
@@ -28,9 +32,9 @@
   
 </div>
 
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
+<div id="AulaseFaltas" class="tabcontent">
+  <h3>Aulas e faltas</h3>
+  <p>Tokyo is the capital of Japan.</p>
 </div>
 
 <div id="Matricula" class="tabcontent">
@@ -89,10 +93,6 @@ $connect->close();
 </div>
 </div>
 
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
 </div>
 </main>
 </body>
