@@ -32,7 +32,7 @@ if (empty($senha)) {
 $login = $connect->real_escape_string($login);
 $senha = $connect->real_escape_string($senha);
 
-// Realizando a consulta
+// Realizando a consulta para verificar usuário
 $query = "SELECT * FROM tbUsuario WHERE login = '$login' AND senha = '$senha'";
 $verifica = $connect->query($query);
 
@@ -41,8 +41,16 @@ if ($verifica->num_rows <= 0) {
     echo "<script>alert('Login ou senha incorretos'); window.location.href='login.php';</script>";
     exit();
 } else {
-    setcookie("login", $login);
-    header("Location: ../aluno.php");
+    // Pegando os dados do usuário
+    $usuario = $verifica->fetch_assoc();
+    $id_usuario = $usuario['id_aluno']; // Pegando o ID do aluno
+
+    // Armazenando dados na sessão
+    session_start();
+    $_SESSION['id_aluno'] = $id_usuario;
+
+    // Redirecionando para a página do aluno
+    header("Location: ../aluno.php?id=" . $id_usuario);
     exit(); // É importante usar exit() após header()
 }
 
