@@ -100,3 +100,123 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+
+
+
+.......
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="function.js" defer></script>
+    <script src="javascript/slidehome.js" defer></script>
+    <script src="javascript/slidesobre.js" defer></script>
+    <title>Escola</title>
+</head>
+
+<body>
+    <main>
+        <!-- Seção Home -->
+        <section id="home" class="body-home">
+            <h1>Home</h1>
+            <div class="slide-home-container">
+                <div class="slide-home slide-homes dotz dot fade">
+                    <img src="images/etecia_frente.jpg" alt="Etecia Frente" style="width: 100%; height: 748px;">
+                </div>
+                <div class="slide-home slide-homes dotz dot fade">
+                    <img src="images/eteciaft.jpg" alt="Etecia F" style="width: 100%; height: 748px;">
+                </div>
+                <div class="slide-home slide-homes dotz dot fade">
+                    <img src="images/backhd2.jpg" alt="Back HD 2" style="width: 100%; height: 748px;">
+                </div>
+                <a class="btnPrev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="btnNext" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Seção Sobre -->
+        <section id="sobre" class="mSobre">
+            <h1>Sobre</h1>
+            <div class="text-sobre-container">
+                <p class="txtSobre">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum ad at odit dolorum nihil, fuga quia
+                    quibusdam aliquam eum fugiat iure aperiam eaque natus laborum maxime, consequatur fugit optio tempore.
+                </p>
+            </div>
+            <div class="slide-sobre-container">
+                <div class="slide-sobre fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="images/etecia_frente.jpg" height="550" width="1000">
+                    <div class="txtSlide">Frente da etec</div>
+                </div>
+                <div class="slide-sobre fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="images/eteciaft.jpg" height="550" width="1000">
+                    <div class="txtSlide">Atrás da etec</div>
+                </div>
+                <div class="slide-sobre fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="images/backhd2.jpg" height="550" width="1000">
+                    <div class="txtSlide">Caption Three</div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
+
+
+
+
+........
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="function.js" defer></script>
+    <script src="javascript/slidehome.js" defer></script>
+    <title>Escola | Home</title>
+</head>
+
+<body class="body-home">
+    <main>
+        <div class="slide-home-container">
+            <div class="slide-home slide-homes dotz dot fade">
+                <img src="images/etecia_frente.jpg" alt="Etecia Frente" style="width: 100%; height: 748px;">
+            </div>
+            <div class="slide-home slide-homes dotz dot fade">
+                <img src="images/eteciaft.jpg" alt="Etecia F" style="width: 100%; height: 748px;">
+            </div>
+            <div class="slide-home slide-homes dotz dot fade">
+                <img src="images/backhd2.jpg" alt="Back HD 2" style="width: 100%; height: 748px;">
+            </div>
+            <a class="btnPrev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="btnNext" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+    </main>
+</body>
+
+</html>
