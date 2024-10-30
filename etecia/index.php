@@ -10,7 +10,6 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <script src="function.js" defer></script>
-    <script src="javascript/slidesobre.js" defer></script>
     <title>Escola</title>
 </head>
 
