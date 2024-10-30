@@ -147,12 +147,11 @@ iframe {
 
 /* Página Sobre */
 .bSobre {
-  background-color: #fff;
+  
 }
 
 .mSobre {
-  background-color: rgb(226, 189, 25);
-  margin: 2.5% 6% 0 5%;
+  
   max-width: 1700px;
   display: flex;
   align-items: center;
@@ -169,7 +168,7 @@ iframe {
 
 /* Texto da Slide */
 .txtSlide {
-  color: #020202;
+  color: #ffffff;
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
@@ -181,7 +180,7 @@ iframe {
 .txtSobre {
   font: 600 18px "Roboto", sans-serif;
   text-decoration: none;
-  color: #000;
+  color: #ffffff;
   padding: 40px 16px 64px;
 }
 
@@ -343,4 +342,28 @@ span.psw {
   width: auto;
   border-left: none;
   height: 500px;
+}
+
+
+/* vídeo background */
+
+.background-video {
+  position: absolute;
+  top: 125%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* Coloca o vídeo atrás do conteúdo */
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* Faz o vídeo cobrir toda a tela sem distorcer */
+}
+
+.content {
+  position: relative;
+  z-index: 1; /* Coloca o conteúdo acima do vídeo */
+  color: white; /* Cor do texto */
+  text-align: center; /* Centraliza o texto */
+  padding: 20px; /* Adiciona espaçamento ao redor do conteúdo */
 }
