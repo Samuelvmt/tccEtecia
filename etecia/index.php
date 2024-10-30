@@ -10,13 +10,13 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <script src="function.js" defer></script>
+    <script src="javascript/slidesobre.js" defer></script>
     <title>Escola</title>
 </head>
 
 <body class="index-body">
     <iframe src="top.php" name="iframe_a"  height="80" width="100%" title="iframeTop"></iframe>
-    <iframe src="home.html" name="iframe_b" height="770" width="100%" title="iframeMid"></iframe>
-    <iframe src="bot.html" name="iframe_c" height="94" width="100%" title="iframeBot"></iframe>
+    <iframe src="home.html" name="iframe_b" height="870" width="100%" title="iframeMid"></iframe>
 </body>
 
 </html>
