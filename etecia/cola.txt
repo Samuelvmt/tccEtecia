@@ -224,6 +224,11 @@ tr:nth-child(even) {
 
 
 
+
+<a href="mobilePage.html" class="mbl-link" target="iframe_b">
+                    <img src="images/newLogoBlock.png" alt="link-mobile-app" height="58" width="130">
+
+
  <p>Insira sua foto</p>
         <form action="upload.php" method="post" enctype="multipart/form-data">
             <label for="imagem">Selecione uma imagem:</label>
