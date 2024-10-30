@@ -49,11 +49,22 @@
     <div id="Inicio" class="tabcontent">
         <h3>Início</h3>
         <!-- Espaço de Avisos -->
+         
     </div>
 
     <div id="Aluno" class="tabcontent">
         <h3>Aluno</h3>
         <div class="dAluno">
+
+    <p>Insira sua foto</p>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <label for="imagem">Selecione uma imagem:</label>
+            <input type="file" name="imagem" id="imagem" required>
+            <br><br>
+            <input type="submit" value="Enviar">
+        </form>
+
+
             <?php
             // Query para selecionar os dados do aluno
             $stmt = $connect->prepare("

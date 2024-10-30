@@ -106,6 +106,12 @@ CREATE TABLE tbNotasFaltas (
     FOREIGN KEY (mat_id) REFERENCES tbMatricula(mat_id) ON DELETE CASCADE
 );
 
+CREATE TABLE tbImage (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    imagem LONGBLOB NOT NULL
+);
+
+
 -- Inserindo dados de exemplo na tabela combinada
 INSERT INTO tbNotasFaltas (mat_id, nota, data_falta) 
 VALUES (1, 8.5, NULL),  -- Nota para matrícula 1
