@@ -176,17 +176,27 @@ iframe {
   text-align: center;
 }
 
+/* Título da página sobre */
+.t1{
+  font: 600 28px "Roboto", sans-serif;
+  text-decoration: none;
+  color: #ffffff;
+  margin-top: 10%;
+  margin-left: 15%;
+  padding: 40px 0px 64px;
+}
+
 /* Texto da página Sobre */
 .txtSobre {
   font: 600 18px "Roboto", sans-serif;
   text-decoration: none;
   color: #ffffff;
-  padding: 40px 16px 64px;
+  padding: 40px 0px 64px;
 }
 
 /* Tela Login */
 .lBody {
-  background: linear-gradient(to right, rgb(0, 0, 0), #ff3d02, rgb(0, 0, 0));
+  background: linear-gradient(to right, rgb(61, 177, 223), #e66114 -5%, rgb(61, 177, 223)90%);
   font-family: Arial, Helvetica, sans-serif;
   margin: 5% 10% 0;
 }
