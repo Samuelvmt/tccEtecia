@@ -146,9 +146,7 @@ iframe {
 }
 
 /* Página Sobre */
-.bSobre {
-  
-}
+
 
 .mSobre {
   
@@ -359,10 +357,12 @@ span.psw {
 
 .background-video {
   position: absolute;
-  top: 125%;
+  top: 50%;
   left: 50%;
   min-width: 100%;
   min-height: 100%;
+  max-width: 1080px;
+  max-height: 1920px;
   width: auto;
   height: auto;
   z-index: -1; /* Coloca o vídeo atrás do conteúdo */
@@ -376,4 +376,81 @@ span.psw {
   color: white; /* Cor do texto */
   text-align: center; /* Centraliza o texto */
   padding: 20px; /* Adiciona espaçamento ao redor do conteúdo */
+}
+
+
+
+
+
+
+
+
+
+/* Estilos do Modal */
+.modal {
+  display: none; /* O modal está oculto por padrão */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Permite rolar caso o conteúdo seja grande */
+  background-color: rgba(0, 0, 0, 0.4); /* Fundo semitransparente */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  animation: animatetop 0.4s;
+}
+
+/* Animação do modal */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+/* O botão de fechar */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilos para os campos do formulário */
+.container input[type="text"], .container input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Botão de submit */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
 }
