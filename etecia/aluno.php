@@ -18,7 +18,7 @@
         <button class="tablinks" onclick="openCity(event, 'Boletim')">Boletim</button>
     </div>
 
-    <div class="conexaoAluno">
+    <div class="conexaoAluno ">
         <?php
         session_start();
         // Configuração da conexão ao banco de dados
@@ -47,14 +47,14 @@
     </div>
 
     <div id="Inicio" class="tabcontent">
-        <h3>Início</h3>
+        <h3 class="pagina-aluno-titulo">Início</h3>
         <!-- Espaço de Avisos -->
          
     </div>
 
     <div id="Aluno" class="tabcontent">
-        <h3>Aluno</h3>
-        <div class="dAluno">
+        <h3 class="pagina-aluno-titulo">Aluno</h3>
+        <div class="dAluno nota">
 
    
 
@@ -114,8 +114,8 @@
     </div>
 
     <div id="Boletim" class="tabcontent">
-        <h3>Boletim</h3>
-        <div class="dAluno">
+        <h3 class="pagina-aluno-titulo">Boletim</h3>
+        <div class="dAluno ">
             <?php
             // Query para selecionar os dados do boletim
             $stmt = $connect->prepare("
@@ -163,7 +163,7 @@
     </div>
 
     <div id="Matricula" class="tabcontent">
-        <h3>Matrícula</h3>
+        <h3 class="pagina-aluno-titulo">Matrícula</h3>
         <div class="dAluno">
             <!-- Tabela relacionada a Matrícula -->
         </div>
