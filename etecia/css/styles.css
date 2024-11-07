@@ -6,6 +6,23 @@
   box-sizing: border-box;
 }
 
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
 iframe {
   vertical-align: bottom;
   margin: 0;
@@ -392,12 +409,10 @@ span.psw {
 .content {
   position: relative;
   z-index: 1; /* Coloca o conteúdo acima do vídeo */
-  color: white; /* Cor do texto */
-  text-align: center; /* Centraliza o texto */
-  padding: 20px; /* Adiciona espaçamento ao redor do conteúdo */
+  color: white; 
+  text-align: center; 
+  padding: 20px; 
 }
-
-
 
 
 
