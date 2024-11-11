@@ -46,10 +46,14 @@
         ?>
     </div>
 
-    <div id="Inicio" class="tabcontent">
+    <div id="Inicio" class="tabcontent aInicio">
         <h3 class="pagina-aluno-titulo">Início</h3>
         <!-- Espaço de Avisos -->
-         
+         <div class="avisos">
+         <h3 class="h3a">Notícias</h3>
+         <h3 class="h3a">Mensagens</h3>
+         <h3 class="h3a">Pendências</h3>
+         </div>
     </div>
 
     <div id="Aluno" class="tabcontent">

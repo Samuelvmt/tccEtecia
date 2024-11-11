@@ -428,3 +428,12 @@ span.psw {
   border-left: none;
   height: 500px;
 }
+.avisos{ 
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+bottom: 50px;
+  margin-left: 50px;
+}
