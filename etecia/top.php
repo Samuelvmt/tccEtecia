@@ -13,7 +13,7 @@
 
 <header class="header">
     <nav class="header-nav">
-        <a href="home.html" class="outros-link" target="iframe_b">home</a>
+        <a href="home.php" class="outros-link" target="iframe_b">home</a>
         <a href="sobre.php" class="outros-link" target="iframe_b">sobre</a>
         <a href="login.php" class="outros-link" target="iframe_b">aluno</a>
     </nav>
