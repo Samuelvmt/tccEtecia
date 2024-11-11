@@ -32,45 +32,56 @@ iframe {
 
 /* Cabeçalho */
 .header {
-  background-image: url("../images/blackbk.jpg");
+  background-color: rgb(36, 85, 46);
   position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
-  padding: 15px 500px;
+  padding: 0px 100px;
+}
+
+.logo{
+width: 140px;
+height: 70px;
 }
 
 .header-nav {
-  margin-top: 8px;
+  margin-top: 5px;
   display: flex;
-  align-items: center;
+  margin-left: -5%;
+  align-items: start;
   justify-content: space-between;
 }
 
 .outros-link,
 .etecia-link {
+  margin-top: 1%;
   text-transform: uppercase;
   text-decoration: none;
-  color: #a89f9f;
+  color: #ffffff;
 }
+
+.splink{
+  margin-left: 4%;
+  height: 55px;
+  width: 100px;}
 
 .outros-link {
-  font: 800 18px "Oswald", sans-serif;
+  margin-top: 1.4%;
+  margin-right: 12%;
+  font: 600 18px "Oswald", sans-serif;
 }
 
-.etecia-link {
-  font: 400 28px "Oswald", sans-serif;
-}
 
 .outros-link:hover {
-  color: rgba(243, 237, 242, 0.8);
+  color: rgba(127, 136, 140, 0.8);
   transition: color 0.2s;
 }
 
 /* Rodapé */
 .footer {
-  background: rgb(0, 0, 0);
-  color: white;
+  background: rgb(36, 85, 46);
+  color: rgb(36, 85, 46);
   padding: 24px 10px;
   font-weight: bold;
   width: 100%;
@@ -100,7 +111,7 @@ iframe {
 
 /* Home */
 .body-home {
-  background-color: #000;
+  background-color: rgb(36,85,46);
 }
 
 /* Slide Home */
@@ -108,7 +119,7 @@ iframe {
   max-height: 770px;
   height: 752px;
   position: relative;
-  background-color: #000;
+  background-color: #ffffff;
 }
 
 /* Botões do slide */
@@ -412,79 +423,4 @@ span.psw {
   color: white; 
   text-align: center; 
   padding: 20px; 
-}
-
-
-
-
-
-
-
-/* Estilos do Modal */
-.modal {
-  display: none; /* O modal está oculto por padrão */
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto; /* Permite rolar caso o conteúdo seja grande */
-  background-color: rgba(0, 0, 0, 0.4); /* Fundo semitransparente */
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 400px;
-  animation: animatetop 0.4s;
-}
-
-/* Animação do modal */
-@keyframes animatetop {
-  from {top: -300px; opacity: 0}
-  to {top: 0; opacity: 1}
-}
-
-/* O botão de fechar */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Estilos para os campos do formulário */
-.container input[type="text"], .container input[type="password"] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-/* Botão de submit */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-button:hover {
-  opacity: 0.8;
 }
