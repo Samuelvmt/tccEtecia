@@ -35,10 +35,10 @@ include_once 'php/conexao.php';
         <div class="footer">
             <nav class="footer-nav">
                 <a href="https://www.instagram.com.br/" class="insta-link" target="_blank">
-                    <img src="images/instagram.png" alt="link-instagram-etecia" height="70" width="70">
+                    <img src="images/instagramIcon.png" alt="link-instagram-etecia" height="40" width="40">
                 </a>
                 <a href="https://www.youtube.com.br/" class="yt-link" target="_blank">
-                    <img src="images/youtube.png" alt="link-youtube-etecia" height="70" width="70">
+                    <img src="images/youtubeIcon.png" alt="link-youtube-etecia" height="50" width="50">
                 </a>
                 <a href="home.php" class="index-link" target="iframe_b">
                     <img src="images/centroEducacionalHorizonte.png" alt="site-logo" class="logo">

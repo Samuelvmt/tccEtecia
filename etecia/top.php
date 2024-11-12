@@ -16,6 +16,12 @@
         <a href="home.php" class="outros-link" target="iframe_b">home</a>
         <a href="sobre.php" class="outros-link" target="iframe_b">sobre</a>
         <a href="login.php" class="outros-link" target="iframe_b">aluno</a>
+        <a href="https://www.instagram.com.br/" class="insta-link" target="_blank">
+                    <img src="images/instagramIcon.png" alt="link-instagram-etecia" height="25" width="25">
+                </a>
+                <a href="https://www.youtube.com.br/" class="yt-link" target="_blank">
+                    <img src="images/youtubeIcon.png" alt="link-youtube-etecia" height="35" width="35">
+                </a>
     </nav>
 </header>
 
