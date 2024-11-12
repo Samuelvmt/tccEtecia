@@ -21,13 +21,13 @@ include_once 'php/conexao.php';
     <main>
         <div class="slide-home-container">
             <div class="slide-home slide-homes dotz dot fade">
-                <img src="images/escolaFrente.jpg" alt="Etecia Frente" style="width: 100%; height: 650px;">
+                <img src="images/escolaFrente.jpg" alt="Etecia Frente" style="width: 100%; height: 750px;">
             </div>
             <div class="slide-home slide-homes dotz dot fade">
-                <img src="images/quadra.jpeg" alt="Etecia F" style="width: 100%; height: 650px;">
+                <img src="images/quadra.jpeg" alt="Etecia F" style="width: 100%; height: 750px;">
             </div>
             <div class="slide-home slide-homes dotz dot fade">
-                <img src="images/echola.jpeg" alt="Back HD 2" style="width: 100%; height: 650px;">
+                <img src="images/echola.jpeg" alt="Back HD 2" style="width: 100%; height: 750px;">
             </div>
             <a class="btnPrev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="btnNext" onclick="plusSlides(1)">&#10095;</a>

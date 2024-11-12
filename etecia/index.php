@@ -15,7 +15,7 @@
 
 <body class="index-body">
     <iframe src="top.php" name="iframe_a"  height="80" width="100%" title="iframeTop"></iframe>
-    <iframe src="home.php" name="iframe_b" height="770" width="100%" title="iframeMid"></iframe>
+    <iframe src="home.php" name="iframe_b" height="870" width="100%" title="iframeMid"></iframe>
 </body>
 
 </html>

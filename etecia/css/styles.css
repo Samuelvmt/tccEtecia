@@ -32,7 +32,7 @@ iframe {
 
 /* Cabeçalho */
 .header {
-  background-color: rgb(23, 58, 30);
+  background: linear-gradient(to right, rgb(17, 18, 19), #201e1d -5%, rgb(59, 61, 61)90%);
   position: fixed;
   width: 100%;
   height: 100%;
@@ -47,7 +47,7 @@ iframe {
 }
 
 .header-nav {
-  margin-top: 5px;
+  margin-top: 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -58,7 +58,7 @@ iframe {
   margin-top: 4%;
   text-transform: uppercase;
   text-decoration: none;
-  color: #ffffff;
+  color: #d6da06;
 }
 
 .splink {
@@ -70,19 +70,19 @@ iframe {
 .outros-link {
   margin-top: 3%;
   margin-right: 0%;
-  font: 600 18px "Oswald", sans-serif;
+  font: 400 18px "Oswald", sans-serif;
 }
 
 
 .outros-link:hover {
-  color: rgba(127, 136, 140, 0.8);
+  color: rgba(118, 122, 116, 0.8);
   transition: color 0.2s;
 }
 
 /* Rodapé */
 .footer {
-  background: rgb(23, 58, 30);
-  color: rgb(23, 58, 30);
+  background: linear-gradient(to right, rgb(17, 18, 19), #201e1d -5%, rgb(59, 61, 61)90%);
+  color: rgb(46, 49, 47);
   padding: 24px 10px;
   font-weight: bold;
   width: 100%;
@@ -112,15 +112,15 @@ iframe {
 
 /* Home */
 .body-home {
-  background-color: rgb(23, 58, 30);
+  background: linear-gradient(to right, rgb(17, 18, 19), #201e1d -5%, rgb(59, 61, 61)90%);
 }
 
 /* Slide Home */
 .slide-home-container {
   max-height: 770px;
-  height: 648px;
+  height: 750px;
   position: relative;
-  background-color: rgb(23, 58, 30);
+  background-color: rgb(225, 226, 225);
 }
 
 /* Botões do slide */
