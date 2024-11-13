@@ -17,7 +17,6 @@
         <video autoplay muted loop class="background-video">
             <source src="images/portasBack (1).mp4" type="video/mp4">
         </video>
-
         <div class="bSobre">
             <div class="mSobre">
                 <div class="text-sobre-container">
@@ -43,6 +42,19 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="cards">
+
+            <div class="temp">
+
+            </div>
+            <div class="contato">
+
+            </div>
+            <div class="endereço">
+                <img src="images/maps.png" class="mapsIcon" alt="icone-maps">
+            </div>
+
         </div>
     </main>
 </body>
