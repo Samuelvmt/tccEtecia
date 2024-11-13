@@ -264,3 +264,16 @@ tr:nth-child(even) {
 </body>
 
 </html>
+
+
+
+
+.insta-link {
+  margin-top: 1%;
+  margin-right: 40px;
+}
+
+.yt-link {
+  margin-top: 0.6%;
+  margin-right: 20px;
+}
