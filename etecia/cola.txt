@@ -2,6 +2,9 @@
                 <a href="mobilePage.html" class="mbl-link" target="iframe_b"><img src="images/mobileapp.png"
                         alt="link-mobile-app" height="58" width="130"></a>
 
+  background: linear-gradient(to right, rgb(61, 177, 223), #e66114 -5%, rgb(61, 177, 223)90%);
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
