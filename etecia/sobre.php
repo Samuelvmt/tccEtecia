@@ -46,13 +46,18 @@
         <div class="cards">
 
             <div class="temp">
-
+            <p class="cTextT">E-mail:</p>
+            <br>
+            <p class="cText">centroedhorizonte@gmail.com</p>
             </div>
             <div class="contato">
-
+            <p class="cTextT">Tel:</p>
+            <br>
+                <p class="cText">(00) 0129-0762</p>
             </div>
             <div class="endereço">
                 <img src="images/maps.png" class="mapsIcon" alt="icone-maps">
+                <p class="cText">Vale do Horizonte, Nº XX</p>
             </div>
 
         </div>

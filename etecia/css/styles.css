@@ -268,26 +268,34 @@ iframe {
 .contato,
 .endereço {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 160px;
-  width: 180px;
+  height: 180px;
+  width: 250px;
   border: 5px;
   border-color: black;
   border-radius: 3%;
-  font: 600 18px "Roboto", sans-serif;
+}
+/* Texto dos Cards. */
+.cTextT {
+  font: 400 20px "Roboto", sans-serif;
 }
 
-.temp {}
+.cText,
+.cTextT {
+  color: white;
+}
 
-.contato {}
+.cText {
+  font: 400 16px "Roboto", sans-serif;
+}
 
-.endereço {}
-
+/* Ícone do Card. */
 .mapsIcon {
-  height: 60px;
-  width: 50px;
-  margin-bottom: 3%;
+  height: 65px;
+  width: 55px;
+  margin-bottom: 12%;
 }
 
 /* Página Login. */
