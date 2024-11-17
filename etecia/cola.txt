@@ -5,6 +5,8 @@
   background: linear-gradient(to right, rgb(61, 177, 223), #e66114 -5%, rgb(61, 177, 223)90%);
 
 
+ <button type="button" class="cancelbtn lButton">Termos de uso</button>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>

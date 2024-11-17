@@ -13,9 +13,9 @@
 <main class="mAluno">
 
     <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'Inicio')" id="defaultOpen">Início</button>
-        <button class="tablinks" onclick="openCity(event, 'Aluno')">Aluno</button>
+        <button class="tablinks" onclick="openCity(event, 'Aluno')" id="defaultOpen">Aluno</button>
         <button class="tablinks" onclick="openCity(event, 'Boletim')">Boletim</button>
+
     </div>
 
     <div class="conexaoAluno ">
@@ -46,16 +46,6 @@
         ?>
     </div>
 
-    <div id="Inicio" class="tabcontent aInicio">
-        <h3 class="pagina-aluno-titulo">Início</h3>
-        <!-- Espaço de Avisos -->
-         <div class="avisos">
-         <h3 class="h3a">Notícias</h3>
-         <h3 class="h3a">Mensagens</h3>
-         <h3 class="h3a">Pendências</h3>
-         </div>
-    </div>
-
     <div id="Aluno" class="tabcontent">
         <h3 class="pagina-aluno-titulo">Aluno</h3>
         <div class="dAluno nota">
@@ -78,7 +68,7 @@
             if ($result->num_rows > 0) {
                 // Começa a tabela HTML
                 echo "<table border='1'>
-                      <tr>
+                      <tr class='infoTop'>
                           <th>Nome</th>
                           <th>RG</th>
                           <th>CPF</th>
@@ -92,7 +82,7 @@
                       </tr>";
                 // Loop para exibir os dados
                 while ($row = $result->fetch_assoc()) {
-                    echo "<tr>
+                    echo "<tr class='infoBot'>
                             <td>" . htmlspecialchars($row["aluno_nome"]) . "</td>
                             <td>" . htmlspecialchars($row["rg"]) . "</td>
                             <td>" . htmlspecialchars($row["cpf"]) . "</td>
@@ -165,14 +155,6 @@
             ?>
         </div>
     </div>
-
-    <div id="Matricula" class="tabcontent">
-        <h3 class="pagina-aluno-titulo">Matrícula</h3>
-        <div class="dAluno">
-            <!-- Tabela relacionada a Matrícula -->
-        </div>
-    </div>
-
 
 </main>
 </body>
