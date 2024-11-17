@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 <?php
 include_once 'php/conexao.php';
-
 ?>
 
 <head>

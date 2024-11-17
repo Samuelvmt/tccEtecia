@@ -6,6 +6,7 @@
   box-sizing: border-box;
 }
 
+/* Tabela da página Aluno. */
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -533,7 +534,7 @@ span.psw {
 .tab button {
   display: flex;
   justify-content: center;
-  margin-top: 55%;
+  margin-top: 35%;
   background-color: inherit;
   color: black;
   padding: 22px 16px;

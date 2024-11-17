@@ -14,9 +14,11 @@
 <body>
     <main class="mAluno">
 
-        <div class="tab">
+        <div class="tab logout-container">
             <button class="tablinks" onclick="openCity(event, 'Aluno')" id="defaultOpen">Aluno</button>
             <button class="tablinks" onclick="openCity(event, 'Boletim')">Boletim</button>
+             <!-- Botão de Encerrar Sessão -->
+            <form action="php/logout.php" method="post"> <button type="submit" class="logout-button">Desconectar</button> </form>
         </div>
 
         <div class="conexaoAluno">
@@ -153,11 +155,8 @@
                 ?>
             </div>
 
-        </div>
-        <!-- Botão de Encerrar Sessão -->
-        <div class="logout-container">
-            <form action="php/logout.php" method="post"> <button type="submit" class="logout-button">Encerrar Sessão</button> </form>
-        </div>
+            </div>
+       
 
     </main>
 </body>
