@@ -48,7 +48,7 @@ if (isset($_COOKIE['login']) && isset($_COOKIE['senha'])) {
 
       <div class="container">
         <button type="button" onclick="document.getElementById('id01').style.display='block'" class="tBtn" style="width:auto;">Termos de uso</button>
-        <span class="psw"><a href="#" class="hreSpan">Esqueceu a senha?</a></span>
+        <span class="psw"><a href="recuperar_senha.php" class="hreSpan">Esqueceu a senha?</a></span>
       </div>
 
       <div class="terms">

@@ -1,7 +1,5 @@
 DROP DATABASE IF EXISTS dbescola;
-
 CREATE DATABASE dbescola;
-
 USE dbescola;
 
 -- Tabela de Funcionários
@@ -42,7 +40,7 @@ CREATE TABLE tbAluno (
     data_nasc DATE NOT NULL,
     sexo CHAR(1) NOT NULL,
     endereco VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
     tel_cel VARCHAR(15) NOT NULL,
     nom_pai VARCHAR(50) NOT NULL,
     nom_mae VARCHAR(50) NOT NULL,
@@ -51,8 +49,9 @@ CREATE TABLE tbAluno (
 );
 
 INSERT INTO tbAluno (nome, rg, cpf, data_nasc, sexo, endereco, email, tel_cel, nom_pai, nom_mae, responsavel) 
-VALUES ('Enzo Silva', '441236589', '37514302312', '2008-10-05', 'M', 'Av dos Lagos 125', 'enzosilva@gmail.com', '953425088', 'Luiz Carlos', 'Maria Luisa', NULL),
-       ('Jalin', '541236589', '45514302312', '2010-10-05', 'M', 'Av dos Lagos 126', 'jalin@gmail.com', '953525074', 'Rogerio', 'Veronica', NULL);
+VALUES 
+('Enzo Silva', '441236589', '37514302312', '2008-10-05', 'M', 'Av dos Lagos 125', 'enzosilva@gmail.com', '953425088', 'Luiz Carlos', 'Maria Luisa', NULL),
+('Jalin', '541236589', '45514302312', '2010-10-05', 'M', 'Av dos Lagos 126', 'jalin@gmail.com', '953525074', 'Rogerio', 'Veronica', NULL);
 
 -- Tabela de Usuários
 CREATE TABLE tbUsuario (
@@ -60,12 +59,16 @@ CREATE TABLE tbUsuario (
     id_aluno INT NOT NULL,
     login VARCHAR(50) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL,
-    FOREIGN KEY (id_aluno) REFERENCES tbAluno(aluno_id) ON DELETE CASCADE
+    token VARCHAR(100), -- Adicionando o campo 'token'
+    email VARCHAR(100) NOT NULL,
+    FOREIGN KEY (id_aluno) REFERENCES tbAluno(aluno_id) ON DELETE CASCADE,
+    FOREIGN KEY (email) REFERENCES tbAluno(email) ON DELETE CASCADE
 );
 
-INSERT INTO tbUsuario (id_aluno, login, senha) VALUES 
-(1, 'abud', '123'),
-(2, 'abudab', '1234');
+INSERT INTO tbUsuario (id_aluno, login, senha, email) 
+VALUES 
+(1, 'abud', '123', 'enzosilva@gmail.com'),
+(2, 'abudab', '1234', 'jalin@gmail.com');
 
 -- Tabela de Turmas
 CREATE TABLE tbTurma (
@@ -106,16 +109,17 @@ CREATE TABLE tbNotasFaltas (
     FOREIGN KEY (mat_id) REFERENCES tbMatricula(mat_id) ON DELETE CASCADE
 );
 
+-- Tabela para Imagens
 CREATE TABLE tbImage (
     id INT AUTO_INCREMENT PRIMARY KEY,
     imagem LONGBLOB NOT NULL
 );
 
-
--- Inserindo dados de exemplo na tabela combinada
+-- Inserindo dados de exemplo na tabela combinada de Notas e Faltas
 INSERT INTO tbNotasFaltas (mat_id, nota, data_falta) 
-VALUES (1, 8.5, NULL),  -- Nota para matrícula 1
-       (1, NULL, '2024-02-15');  -- Falta para matrícula 1
+VALUES 
+(1, 8.5, NULL),  -- Nota para matrícula 1
+(1, NULL, '2024-02-15');  -- Falta para matrícula 1
 
 -- Exibir a estrutura das tabelas
 SHOW CREATE TABLE tbFuncionario;
@@ -125,6 +129,7 @@ SHOW CREATE TABLE tbTurma;
 SHOW CREATE TABLE tbMatricula;
 SHOW CREATE TABLE tbUsuario;
 SHOW CREATE TABLE tbNotasFaltas;
+SHOW CREATE TABLE tbImage;
 
 -- Exibir os registros das tabelas
 SELECT * FROM tbFuncionario;
@@ -134,3 +139,4 @@ SELECT * FROM tbTurma;
 SELECT * FROM tbMatricula;
 SELECT * FROM tbUsuario;
 SELECT * FROM tbNotasFaltas;
+SELECT * FROM tbImage;
