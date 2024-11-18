@@ -17,8 +17,10 @@
         <div class="tab logout-container">
             <button class="tablinks" onclick="openCity(event, 'Aluno')" id="defaultOpen">Aluno</button>
             <button class="tablinks" onclick="openCity(event, 'Boletim')">Boletim</button>
-             <!-- Botão de Encerrar Sessão -->
-            <form action="php/logout.php" method="post"> <button type="submit" class="logout-button">Desconectar</button> </form>
+            <!-- Botão de Encerrar Sessão -->
+            <form action="php/logout.php" method="post">
+                <button type="submit" class="logout-button">Desconectar</button>
+            </form>
         </div>
 
         <div class="conexaoAluno">
@@ -50,7 +52,69 @@
         </div>
 
         <div id="Aluno" class="tabcontent">
-            <h3 class="pagina-aluno-titulo">Aluno</h3>
+            <h3 class="pagina-aluno-titulo">Aluno</h3>  
+            
+            <div class="foto">
+
+
+            <?php
+// Recupera o caminho da foto de perfil do banco de dados
+$stmt = $connect->prepare("SELECT foto_perfil FROM tbAluno WHERE aluno_id = ?");
+$stmt->bind_param("i", $id_usuario_especifico);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $foto_perfil = $row['foto_perfil'];
+    echo '<img src="' . htmlspecialchars($foto_perfil) . '" alt="Foto de Perfil" />';
+} else {
+    echo '<img src="path/to/default/profile/picture.jpg" alt="Foto de Perfil Padrão" />';
+}
+
+$stmt->close();
+?>
+
+
+
+            <form action="php/upload_foto.php" method="post" enctype="multipart/form-data">
+                <label for="foto_perfil">Selecione sua foto de perfil:</label>
+                <input type="file" name="foto_perfil" id="foto_perfil" required>
+                <button type="submit">Upload</button>
+            </div>
+            
+            <div class="matric">
+                <?php
+                // Query para selecionar os dados do aluno
+                $stmt = $connect->prepare("
+                SELECT m.mat_id, m.mat_data 
+                FROM tbMatricula m 
+                JOIN tbUsuario u ON m.aluno_id = u.id_aluno 
+                WHERE u.id = ?
+                ");
+                $stmt->bind_param("i", $id_usuario_especifico);
+                $stmt->execute();
+                $result = $stmt->get_result();
+
+                if ($result->num_rows > 0) {
+                    echo "<table border='1'>
+                          <tr class='infoTop'>
+                              <th>Id</th>
+                              <th>Data da matrícula</th>
+                          </tr>";
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr class='infoBot'>
+                                <td>" . htmlspecialchars($row["mat_id"]) . "</td>
+                                <td>" . htmlspecialchars($row["mat_data"]) . "</td>
+                              </tr>";
+                    }
+                    echo "</table>";
+                } else {
+                    echo "0 resultados";
+                }
+                $stmt->close();
+                ?>
+            </div>
             <div class="dAluno nota">
                 <?php
                 // Query para selecionar os dados do aluno
@@ -68,32 +132,32 @@
                 if ($result->num_rows > 0) {
                     // Começa a tabela HTML
                     echo "<table border='1'>
-                      <tr class='infoTop'>
-                          <th>Nome</th>
-                          <th>RG</th>
-                          <th>CPF</th>
-                          <th>Data de Nascimento</th>
-                          <th>Sexo</th>
-                          <th>Endereço</th>
-                          <th>Email</th>
-                          <th>Telefone</th>
-                          <th>Nome do Pai</th>
-                          <th>Nome da Mãe</th>
-                      </tr>";
+                          <tr class='infoTop'>
+                              <th>Nome</th>
+                              <th>RG</th>
+                              <th>CPF</th>
+                              <th>Data de Nascimento</th>
+                              <th>Sexo</th>
+                              <th>Endereço</th>
+                              <th>Email</th>
+                              <th>Telefone</th>
+                              <th>Nome do Pai</th>
+                              <th>Nome da Mãe</th>
+                          </tr>";
                     // Loop para exibir os dados
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr class='infoBot'>
-                            <td>" . htmlspecialchars($row["aluno_nome"]) . "</td>
-                            <td>" . htmlspecialchars($row["rg"]) . "</td>
-                            <td>" . htmlspecialchars($row["cpf"]) . "</td>
-                            <td>" . htmlspecialchars($row["data_nasc"]) . "</td>
-                            <td>" . htmlspecialchars($row["sexo"]) . "</td>
-                            <td>" . htmlspecialchars($row["endereco"]) . "</td>
-                            <td>" . htmlspecialchars($row["email"]) . "</td>
-                            <td>" . htmlspecialchars($row["tel_cel"]) . "</td>
-                            <td>" . htmlspecialchars($row["nom_pai"]) . "</td>
-                            <td>" . htmlspecialchars($row["nom_mae"]) . "</td>
-                          </tr>";
+                                <td>" . htmlspecialchars($row["aluno_nome"]) . "</td>
+                                <td>" . htmlspecialchars($row["rg"]) . "</td>
+                                <td>" . htmlspecialchars($row["cpf"]) . "</td>
+                                <td>" . htmlspecialchars($row["data_nasc"]) . "</td>
+                                <td>" . htmlspecialchars($row["sexo"]) . "</td>
+                                <td>" . htmlspecialchars($row["endereco"]) . "</td>
+                                <td>" . htmlspecialchars($row["email"]) . "</td>
+                                <td>" . htmlspecialchars($row["tel_cel"]) . "</td>
+                                <td>" . htmlspecialchars($row["nom_pai"]) . "</td>
+                                <td>" . htmlspecialchars($row["nom_mae"]) . "</td>
+                              </tr>";
                     }
                     // Fecha a tabela
                     echo "</table>";
@@ -129,20 +193,20 @@
                 if ($result->num_rows > 0) {
                     // Começa a tabela HTML
                     echo "<table border='1'>
-                      <tr>
-                          <th>Aluno</th>
-                          <th>Disciplina</th>
-                          <th>Nota</th>
-                          <th>Data da Falta</th>
-                      </tr>";
+                          <tr>
+                              <th>Aluno</th>
+                              <th>Disciplina</th>
+                              <th>Nota</th>
+                              <th>Data da Falta</th>
+                          </tr>";
                     // Loop para exibir os dados
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>
-                            <td>" . htmlspecialchars($row["aluno_nome"]) . "</td>
-                            <td>" . htmlspecialchars($row["disciplina_nome"]) . "</td>
-                            <td>" . htmlspecialchars($row["nota"] ?? 'N/A') . "</td>
-                            <td>" . htmlspecialchars($row["data_falta"] ?? 'N/A') . "</td>
-                          </tr>";
+                                <td>" . htmlspecialchars($row["aluno_nome"]) . "</td>
+                                <td>" . htmlspecialchars($row["disciplina_nome"]) . "</td>
+                                <td>" . htmlspecialchars($row["nota"] ?? 'N/A') . "</td>
+                                <td>" . htmlspecialchars($row["data_falta"] ?? 'N/A') . "</td>
+                              </tr>";
                     }
                     // Fecha a tabela
                     echo "</table>";
@@ -154,8 +218,8 @@
                 $stmt->close();
                 ?>
             </div>
-            </div>
-       
+        </div>
+
     </main>
 </body>
 

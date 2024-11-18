@@ -29,7 +29,18 @@ CREATE TABLE tbDisciplina (
 );
 
 INSERT INTO tbDisciplina (nome, carga_hr) 
-VALUES ('Matematica', 40);
+VALUES ('Portugues', 60),
+('Matematica', 60),
+('História', 40),
+('Geografia', 40),
+('Artes', 40),
+('Biologia', 40),
+('Educacao fisica', 40),
+('Quimica', 40),
+('Fisica', 40),
+('Lingua inglesa', 40),
+('Filosofia', 40),
+('Ciencia', 40);
 
 -- Tabela de Alunos
 CREATE TABLE tbAluno (
@@ -45,13 +56,15 @@ CREATE TABLE tbAluno (
     nom_pai VARCHAR(50) NOT NULL,
     nom_mae VARCHAR(50) NOT NULL,
     responsavel VARCHAR(50) NULL,
+    foto_perfil VARCHAR(255) NULL,
     PRIMARY KEY (aluno_id)
 );
 
 INSERT INTO tbAluno (nome, rg, cpf, data_nasc, sexo, endereco, email, tel_cel, nom_pai, nom_mae, responsavel) 
 VALUES 
 ('Enzo Silva', '441236589', '37514302312', '2008-10-05', 'M', 'Av dos Lagos 125', 'enzosilva@gmail.com', '953425088', 'Luiz Carlos', 'Maria Luisa', NULL),
-('Jalin', '541236589', '45514302312', '2010-10-05', 'M', 'Av dos Lagos 126', 'jalin@gmail.com', '953525074', 'Rogerio', 'Veronica', NULL);
+('Jalin Rodney', '541236589', '45514302312', '2010-10-05', 'M', 'Av dos Lagos 126', 'jalin@gmail.com', '953525074', 'Rogerio', 'Veronica', NULL),
+('Victor Modesto', '541236527', '45514302384', '2001-09-04', 'M', 'Rua da Montanha 092', 'nox.78k@gmail.com', '953525576', 'Hugo', 'Gabriela', NULL);
 
 -- Tabela de Usuários
 CREATE TABLE tbUsuario (
@@ -59,7 +72,7 @@ CREATE TABLE tbUsuario (
     id_aluno INT NOT NULL,
     login VARCHAR(50) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL,
-    token VARCHAR(100), -- Adicionando o campo 'token'
+    token VARCHAR(100),
     email VARCHAR(100) NOT NULL,
     FOREIGN KEY (id_aluno) REFERENCES tbAluno(aluno_id) ON DELETE CASCADE,
     FOREIGN KEY (email) REFERENCES tbAluno(email) ON DELETE CASCADE
@@ -67,8 +80,9 @@ CREATE TABLE tbUsuario (
 
 INSERT INTO tbUsuario (id_aluno, login, senha, email) 
 VALUES 
-(1, 'abud', '123', 'enzosilva@gmail.com'),
-(2, 'abudab', '1234', 'jalin@gmail.com');
+(1, 'es#2024', '123', 'enzosilva@gmail.com'),
+(2, 'jr#2024', '1234', 'jalin@gmail.com'),
+(3, 'vm#2024', '12', 'nox.78k@gmail.com');
 
 -- Tabela de Turmas
 CREATE TABLE tbTurma (
@@ -85,6 +99,7 @@ CREATE TABLE tbTurma (
 INSERT INTO tbTurma (func_id, disc_id, ini_data, fin_data) 
 VALUES (1, 1, '2024-02-10', '2024-12-05');
 
+
 -- Tabela de Matrículas
 CREATE TABLE tbMatricula (
     mat_id INT NOT NULL AUTO_INCREMENT,
@@ -97,7 +112,9 @@ CREATE TABLE tbMatricula (
 );
 
 INSERT INTO tbMatricula (disc_id, aluno_id, mat_data) 
-VALUES (1, 1, '2024-01-21');
+VALUES (1, 1, '2024-01-21'),
+(2, 2, '2024-01-21'),
+(3, 3, '2024-01-20');
 
 -- Tabela combinada de Notas e Faltas
 CREATE TABLE tbNotasFaltas (
@@ -109,17 +126,12 @@ CREATE TABLE tbNotasFaltas (
     FOREIGN KEY (mat_id) REFERENCES tbMatricula(mat_id) ON DELETE CASCADE
 );
 
--- Tabela para Imagens
-CREATE TABLE tbImage (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    imagem LONGBLOB NOT NULL
-);
-
 -- Inserindo dados de exemplo na tabela combinada de Notas e Faltas
 INSERT INTO tbNotasFaltas (mat_id, nota, data_falta) 
 VALUES 
-(1, 8.5, NULL),  -- Nota para matrícula 1
-(1, NULL, '2024-02-15');  -- Falta para matrícula 1
+(1, 8.5, '2024-02-15'), 
+(2, 7.5, '2024-02-18'),
+(3, 10, NULL);  
 
 -- Exibir a estrutura das tabelas
 SHOW CREATE TABLE tbFuncionario;
@@ -129,7 +141,6 @@ SHOW CREATE TABLE tbTurma;
 SHOW CREATE TABLE tbMatricula;
 SHOW CREATE TABLE tbUsuario;
 SHOW CREATE TABLE tbNotasFaltas;
-SHOW CREATE TABLE tbImage;
 
 -- Exibir os registros das tabelas
 SELECT * FROM tbFuncionario;
@@ -139,4 +150,3 @@ SELECT * FROM tbTurma;
 SELECT * FROM tbMatricula;
 SELECT * FROM tbUsuario;
 SELECT * FROM tbNotasFaltas;
-SELECT * FROM tbImage;
