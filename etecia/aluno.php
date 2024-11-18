@@ -54,10 +54,8 @@
         <div id="Aluno" class="tabcontent">
             <h3 class="pagina-aluno-titulo">Aluno</h3>  
             
-            <div class="foto">
-
-
-            <?php
+<div class="mostarFoto">
+<?php
 // Recupera o caminho da foto de perfil do banco de dados
 $stmt = $connect->prepare("SELECT foto_perfil FROM tbAluno WHERE aluno_id = ?");
 $stmt->bind_param("i", $id_usuario_especifico);
@@ -74,15 +72,10 @@ if ($result->num_rows > 0) {
 
 $stmt->close();
 ?>
+</div>
 
+<button type="button" onclick="document.getElementById('id01').style.display='block'" class="tBtn" style="width:auto;">Selecione sua foto de perfil:</button>
 
-
-            <form action="php/upload_foto.php" method="post" enctype="multipart/form-data">
-                <label for="foto_perfil">Selecione sua foto de perfil:</label>
-                <input type="file" name="foto_perfil" id="foto_perfil" required>
-                <button type="submit">Upload</button>
-            </div>
-            
             <div class="matric">
                 <?php
                 // Query para selecionar os dados do aluno
@@ -219,7 +212,21 @@ $stmt->close();
                 ?>
             </div>
         </div>
-
+        <div class="terms">
+        <div id="id01" class="modal">
+          <div class="modal-content animate">
+            
+            <p class="pagina-aluno-titulo">Atualizar Foto<br></p>
+            <div class="fotoUpload">
+            <form action="php/upload_foto.php" method="post" enctype="multipart/form-data">
+                <label for="foto_perfil">Selecione sua foto de perfil:</label>
+                <input type="file" name="foto_perfil" id="foto_perfil" required>
+                <button type="submit">Upload</button>
+            </div> 
+            
+            <div class="faixa" style="background-color:#f1f1f1">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="okbtn">Ok</button>
+            </div>
     </main>
 </body>
 

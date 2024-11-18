@@ -47,22 +47,8 @@ if (isset($_COOKIE['login']) && isset($_COOKIE['senha'])) {
       </div>
 
       <div class="container">
-        <button type="button" onclick="document.getElementById('id01').style.display='block'" class="tBtn" style="width:auto;">Termos de uso</button>
         <span class="psw"><a href="recuperar_senha.php" class="hreSpan">Esqueceu a senha?</a></span>
       </div>
-
-      <div class="terms">
-        <div id="id01" class="modal">
-          <div class="modal-content animate">
-            <div class="imgcontainer">
-              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-            </div>
-            <p>Termos de Uso<br>
-              <!-- termos de uso aqui -->
-            </p>
-            <div class="container" style="background-color:#f1f1f1">
-              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="okbtn">Ok</button>
-            </div>
           </div>
         </div>
       </div>

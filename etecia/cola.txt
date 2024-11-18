@@ -282,3 +282,14 @@ tr:nth-child(even) {
   margin-top: 0.6%;
   margin-right: 20px;
 }
+
+
+
+
+<div class="fotoUpload">
+            <form action="php/upload_foto.php" method="post" enctype="multipart/form-data">
+                <label for="foto_perfil">Selecione sua foto de perfil:</label>
+                <input type="file" name="foto_perfil" id="foto_perfil" required>
+                <button type="submit">Upload</button>
+            </div>
+            
