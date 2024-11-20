@@ -28,6 +28,11 @@ window.onclick = function(event) {
 
 
 
+    document.querySelector('form').onsubmit = function() {
+        document.getElementById('id01').style.display = 'none';
+    };
+
+
 
 
 

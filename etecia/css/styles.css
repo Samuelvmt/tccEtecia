@@ -489,20 +489,20 @@ span.psw {
 }
 
 /* Foto de Perfil.  */
-.mostarFoto{
-display: flex;
-justify-content: center;
-width: 40px;
-height: 60px;
-border: 2px color(srgb rgb(27, 25, 25) rgb(105, 121, 105) rgb(100, 100, 142));
-background-color: white;
-margin-top: 5%;
-margin-left: 5%;
+.mostarFoto {
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  height: 60px;
+  border: 1px;
+  background-color: white;
+  margin-top: 5%;
+  margin-left: 5%;
 }
 
-.fotoUpload{
-margin-top: 5%;
-margin-bottom: 5%;
+.fotoUpload {
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 /*  */
@@ -517,10 +517,10 @@ margin-bottom: 5%;
   background-color: #a81212;
 }
 
-.faixa{
-padding: 10px 10px;
-display: flex;
-align-items: end;
+.faixa {
+  padding: 10px 10px;
+  display: flex;
+  align-items: end;
 }
 
 /* Extra styles for the cancel button */
