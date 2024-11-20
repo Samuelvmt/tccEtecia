@@ -12,6 +12,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['foto_perfil'])) {
     $id_aluno = $_SESSION['id_aluno'];
     $foto_perfil = $_FILES['foto_perfil'];
 
+    // Verifica se o arquivo é uma imagem real
+    $check = getimagesize($foto_perfil['tmp_name']);
+    if($check === false) {
+        die("O arquivo não é uma imagem.");
+    }
+
     // Diretório onde as imagens serão armazenadas
     $diretorio_upload = 'uploads/fotos_perfil/';
     if (!is_dir($diretorio_upload)) {
@@ -38,13 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['foto_perfil'])) {
             die("Erro na conexão: " . $connect->connect_error);
         }
 
-        // Verifica se o arquivo é uma imagem real
-        $check = getimagesize($foto_perfil['tmp_name']);
-        if ($check === false) {
-            die("O arquivo não é uma imagem.");
-        }
-
-
         // Atualiza o campo foto_perfil na tabela tbAluno
         $stmt = $connect->prepare("UPDATE tbAluno SET foto_perfil = ? WHERE aluno_id = ?");
         $stmt->bind_param("si", $caminho_arquivo, $id_aluno);
@@ -62,3 +61,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['foto_perfil'])) {
 } else {
     echo "Nenhum arquivo foi enviado.";
 }
+?>

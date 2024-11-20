@@ -63,14 +63,14 @@
                 if ($result->num_rows > 0) {
                     $row = $result->fetch_assoc();
                     $foto_perfil = $row['foto_perfil'];
-                    echo '<img src="' . htmlspecialchars($foto_perfil) . '" alt="Foto do Bill" />';
+                    $caminho_absoluto = 'http://localhost/tccetecia/etecia/php/' . $foto_perfil;
+                    echo '<img src="' . htmlspecialchars($caminho_absoluto) . '" alt="Foto de Perfil" />';
                 } else {
                     echo '<img src="path/to/default/profile/picture.jpg" alt="Foto de Perfil Padrão" />';
                 }
                 $stmts->close();
                 ?>
             </div>
-
 
             <button type="button" onclick="document.getElementById('id01').style.display='block'" class="tBtn" style="width:auto;">Selecione sua foto de perfil:</button>
 
