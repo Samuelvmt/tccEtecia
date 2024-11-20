@@ -64,17 +64,19 @@
                     $row = $result->fetch_assoc();
                     $foto_perfil = $row['foto_perfil'];
                     $caminho_absoluto = 'http://localhost/tccetecia/etecia/php/' . $foto_perfil;
-                    echo '<img src="' . htmlspecialchars($caminho_absoluto) . '" alt="Foto de Perfil" />';
+                    echo '<img src="' . htmlspecialchars($caminho_absoluto) . '" alt="Foto de Perfil" class="profile-picture" />';
+
+                    
                 } else {
-                    echo '<img src="path/to/default/profile/picture.jpg" alt="Foto de Perfil Padrão" />';
+                    echo '<img src="path/to/default/profile/picture.jpg" alt="Foto de Perfil Padrão" class="profile-picture" />';
                 }
                 $stmts->close();
                 ?>
             </div>
-
-            <button type="button" onclick="document.getElementById('id01').style.display='block'" class="tBtn" style="width:auto;">Selecione sua foto de perfil:</button>
-
+        <div class="mids">
+        <button type="button" onclick="document.getElementById('id01').style.display='block'" class="tBtn" style="width:auto;">Selecione sua foto de perfil:</button>
             <div class="matric">
+
                 <?php
                 // Query para selecionar os dados do aluno
                 $stmt = $connect->prepare("
@@ -105,6 +107,7 @@
                 }
                 $stmt->close();
                 ?>
+            </div>
             </div>
             <div class="dAluno nota">
                 <?php
