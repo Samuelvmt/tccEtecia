@@ -28,19 +28,19 @@ CREATE TABLE tbDisciplina (
     PRIMARY KEY (disc_id)
 );
 
-INSERT INTO tbDisciplina (nome, carga_hr) 
-VALUES ('Portugues', 60),
-('Matematica', 60),
-('História', 40),
-('Geografia', 40),
-('Artes', 40),
-('Biologia', 40),
-('Educacao fisica', 40),
-('Quimica', 40),
-('Fisica', 40),
-('Lingua inglesa', 40),
-('Filosofia', 40),
-('Ciencia', 40);
+INSERT INTO tbDisciplina (disc_id, nome, carga_hr) 
+VALUES (1, 'Português', 60),
+(2, 'Matemática', 60),
+(3, 'História', 40),
+(4, 'Geografia', 40),
+(5, 'Artes', 40),
+(6, 'Biologia', 40),
+(7, 'Educação física', 40),
+(8, 'Química', 40),
+(9, 'Física', 40),
+(10, 'Inglês', 40),
+(11, 'Filosofia', 40),
+(12, 'Ciência', 40);
 
 -- Tabela de Alunos
 CREATE TABLE tbAluno (
@@ -120,18 +120,20 @@ VALUES (1, 1, '2024-01-21'),
 CREATE TABLE tbNotasFaltas (
     id INT NOT NULL AUTO_INCREMENT,
     mat_id INT NOT NULL,
+    disc_id INT NOT NULL,
     nota DECIMAL(5,2) NOT NULL,
     data_falta DATE NULL,
     PRIMARY KEY (id),
+    FOREIGN KEY (disc_id) REFERENCES tbDisciplina(disc_id),
     FOREIGN KEY (mat_id) REFERENCES tbMatricula(mat_id) ON DELETE CASCADE
 );
 
 -- Inserindo dados de exemplo na tabela combinada de Notas e Faltas
-INSERT INTO tbNotasFaltas (mat_id, nota, data_falta) 
-VALUES 
-(1, 8.5, '2024-02-15'), 
-(2, 7.5, '2024-02-18'),
-(3, 10, NULL);  
+ INSERT INTO tbNotasFaltas (mat_id,disc_id, nota, data_falta) 
+VALUES
+(3, 1, 5,NULL),(3, 2, 6,NULL),(3, 3, 6,NULL),(3, 4, 6,NULL),(3, 5, 8,NULL),(3, 6, 10,NULL),(3, 7, 9,NULL),(3, 8, 10,NULL),(3, 9, 10,NULL),(3, 10, 7,NULL),(3, 11, 8,NULL),(3, 12, 6,NULL),
+(2, 1, 7,NULL),(2, 2, 8,NULL),(2, 3, 10,NULL),(2, 4, 10,NULL),(2, 5, 8,NULL),(2, 6, 8,NULL),(2, 7, 6,NULL),(2, 8, 5,NULL),(2, 9, 10,NULL),(2, 10, 10,NULL),(2, 11, 7,NULL),(2, 12, 8,NULL),
+(1, 1, 8,NULL),(1, 2, 7,NULL),(1, 3, 9,NULL),(1, 4, 10,NULL),(1, 5, 10,NULL),(1, 6, 9,NULL),(1, 7, 9,NULL),(1, 8, 9,NULL),(1, 9, 9,NULL),(1, 10, 9,NULL),(1, 11, 9,NULL),(1, 12, 10,NULL); 
 
 -- Exibir a estrutura das tabelas
 SHOW CREATE TABLE tbFuncionario;

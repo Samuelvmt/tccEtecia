@@ -293,3 +293,23 @@ tr:nth-child(even) {
                 <button type="submit">Upload</button>
             </div>
             
+
+
+
+            INSERT INTO tbNotasFaltas (mat_id, nota, data_falta) 
+VALUES 
+(1, 8.5, '2024-02-15'), 
+(2, 7.5, '2024-02-18'),
+(3, 7.5, NULL),
+(3, 7.5, NULL),
+(3, 7.5, NULL),
+(3, 7.5, NULL),
+(3, 7.5, NULL),
+(3, 7.5, NULL),
+(3, 7.5, NULL),
+(3, 7.5, NULL),
+(3, 7.5, NULL),
+(3, 7.5, NULL),
+(3, 7.5, NULL),
+(3, 7.5, NULL),
+(3, 10, NULL); 

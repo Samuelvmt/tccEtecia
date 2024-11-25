@@ -64,11 +64,9 @@
                     $row = $result->fetch_assoc();
                     $foto_perfil = $row['foto_perfil'];
                     $caminho_absoluto = 'http://localhost/tccetecia/etecia/php/' . $foto_perfil;
-                    echo '<img src="' . htmlspecialchars($caminho_absoluto) . '" alt="Foto de Perfil" class="profile-picture" />';
-
-                    
+                    echo '<img src="' . htmlspecialchars($caminho_absoluto) . '" alt="Foto de Perfil" class="profile-picture" />';         
                 } else {
-                    echo '<img src="path/to/default/profile/picture.jpg" alt="Foto de Perfil Padrão" class="profile-picture" />';
+                    echo '<img src="images/avatar.png" alt="Foto de Perfil Padrão" class="profile-picture" />';
                 }
                 $stmts->close();
                 ?>
@@ -166,7 +164,6 @@
         </div>
 
         <div id="Boletim" class="tabcontent">
-            <h3 class="pagina-aluno-titulo">Boletim</h3>
             <div class="dAluno">
                 <?php
                 // Query para selecionar os dados do boletim
@@ -176,7 +173,7 @@
                 FROM tbMatricula m
                 JOIN tbAluno a ON m.aluno_id = a.aluno_id
                 JOIN tbNotasFaltas nf ON m.mat_id = nf.mat_id
-                JOIN tbDisciplina d ON m.disc_id = d.disc_id
+                JOIN tbDisciplina d ON d.disc_id = nf.disc_id
                 WHERE m.aluno_id = ?
             ");
                 $stmt->bind_param("i", $id_usuario_especifico);
@@ -188,7 +185,6 @@
                     // Começa a tabela HTML
                     echo "<table border='1'>
                           <tr>
-                              <th>Aluno</th>
                               <th>Disciplina</th>
                               <th>Nota</th>
                               <th>Data da Falta</th>
@@ -196,7 +192,6 @@
                     // Loop para exibir os dados
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>
-                                <td>" . htmlspecialchars($row["aluno_nome"]) . "</td>
                                 <td>" . htmlspecialchars($row["disciplina_nome"]) . "</td>
                                 <td>" . htmlspecialchars($row["nota"] ?? 'N/A') . "</td>
                                 <td>" . htmlspecialchars($row["data_falta"] ?? 'N/A') . "</td>

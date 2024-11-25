@@ -3,26 +3,29 @@ session_start();
 
 // Verifica se já existe uma sessão ativa
 if (isset($_SESSION['id_aluno'])) {
-    header("Location: aluno.php");
-    exit();
+  header("Location: aluno.php");
+  exit();
 }
 
 // Verifica se os cookies estão definidos
 if (isset($_COOKIE['login']) && isset($_COOKIE['senha'])) {
-    header("Location: php/validacao.php");
-    exit();
+  header("Location: php/validacao.php");
+  exit();
 }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="javascript/function.js" defer></script>
-    <title>Escola | Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="javascript/function.js" defer></script>
+  <script src="javascript/modal2.js" defer></script>
+  <title>Escola | Login</title>
 </head>
+
 <body class="lBody">
   <main class="lMain">
     <img src="images/horizons.png" class="lLogo">
@@ -47,12 +50,32 @@ if (isset($_COOKIE['login']) && isset($_COOKIE['senha'])) {
       </div>
 
       <div class="container">
-        <span class="psw"><a href="recuperar_senha.php" class="hreSpan">Esqueceu a senha?</a></span>
+        <button type="button" onclick="document.getElementById('id02').style.display='block'" class="tBtn" style="width:auto;">Esqueceu a senha?</button>
       </div>
-          </div>
-        </div>
+      </div>
+      </div>
       </div>
     </form>
+
+    <div class="terms">
+      <div id="id02" class="modal">
+        <div class="modal-content animate">
+
+          <p class="pagina-aluno-titulo">Atualizar senha<br></p>
+          <div class="recupSenha">
+            <form action="php/enviar_email.php" method="post">
+              <label for="email">Digite seu e-mail:</label>
+              <input type="email" name="email" id="email" required>
+              <button type="submit" class="envias">Enviar</button>
+            </form>
+          </div>
+
+          <div class="faixa" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="okbtn">Sair</button>
+          </div>
+
+
   </main>
 </body>
+
 </html>
