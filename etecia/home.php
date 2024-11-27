@@ -33,7 +33,7 @@ include_once 'php/conexao.php';
         <div class="footer">
             <nav class="footer-nav">
                 <a href="home.php" class="index-link" target="iframe_b">
-                    <img src="images/centroEducacionalHorizonte.png" alt="site-logo" class="logo">
+                    <img src="images/cardlogo.png" alt="site-logo" class="logo">
                 </a>
                 <a href="https://www.saopaulo.sp.gov.br/" class="gov-link" target="_blank">
                     <img src="images/spbr.png" class="splink" alt="link-gov-br">

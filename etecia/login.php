@@ -28,11 +28,10 @@ if (isset($_COOKIE['login']) && isset($_COOKIE['senha'])) {
 
 <body class="lBody">
   <main class="lMain">
-    <img src="images/horizons.png" class="lLogo">
 
     <form action="php/validacao.php" method="post" class="lForm" style="background-color: rgba(0, 0, 0, 0.8);">
       <div class="imgcontainer">
-        <img src="images/avatar.png" alt="Avatar" class="avatar">
+        <img src="images/newHorizon.png" alt="Avatar" class="avatar">
       </div>
 
       <div class="container">

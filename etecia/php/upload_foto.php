@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['foto_perfil'])) {
         $stmt = $connect->prepare("UPDATE tbAluno SET foto_perfil = ? WHERE aluno_id = ?");
         $stmt->bind_param("si", $caminho_arquivo, $id_aluno);
         if ($stmt->execute()) {
-            echo "Foto de perfil atualizada com sucesso.";
+            header("Location: ../aluno.php");
         } else {
             echo "Erro ao atualizar a foto de perfil.";
         }

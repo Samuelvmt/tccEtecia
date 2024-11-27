@@ -54,58 +54,61 @@
         <div id="Aluno" class="tabcontent">
             <h3 class="pagina-aluno-titulo">Aluno</h3>
 
-            <div class="mostarFoto">
-                <?php
-                $stmts = $connect->prepare("SELECT foto_perfil FROM tbAluno WHERE aluno_id = ?");
-                $stmts->bind_param("i", $id_usuario_especifico);
-                $stmts->execute();
-                $result = $stmts->get_result();
-                if ($result->num_rows > 0) {
-                    $row = $result->fetch_assoc();
-                    $foto_perfil = $row['foto_perfil'];
+            <?php
+            $stmts = $connect->prepare("SELECT foto_perfil FROM tbAluno WHERE aluno_id = ?");
+            $stmts->bind_param("i", $id_usuario_especifico);
+            $stmts->execute();
+            $result = $stmts->get_result();
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                $foto_perfil = $row['foto_perfil'];
+                if (!empty($foto_perfil)) {
                     $caminho_absoluto = 'http://localhost/tccetecia/etecia/php/' . $foto_perfil;
-                    echo '<img src="' . htmlspecialchars($caminho_absoluto) . '" alt="Foto de Perfil" class="profile-picture" />';         
+                    echo '<img src="' . htmlspecialchars($caminho_absoluto) . '" alt="Foto de Perfil" class="profile-picture" />';
                 } else {
                     echo '<img src="images/avatar.png" alt="Foto de Perfil Padrão" class="profile-picture" />';
                 }
-                $stmts->close();
-                ?>
-            </div>
-        <div class="mids">
-        <button type="button" onclick="document.getElementById('id01').style.display='block'" class="tBtn" style="width:auto;">Selecione sua foto de perfil:</button>
-            <div class="matric">
+            } else {
+                echo '<img src="images/avatar.png" alt="Foto de Perfil Padrão" class="profile-picture" />';
+            }
+            $stmts->close();
+            ?>
 
-                <?php
-                // Query para selecionar os dados do aluno
-                $stmt = $connect->prepare("
+            <div class="mids">
+                <button type="button" onclick="document.getElementById('id01').style.display='block'" class="tBtn" style="width:auto;">Selecione sua foto de perfil:</button>
+                <div class="matric">
+
+                    <?php
+                    // Query para selecionar os dados do aluno
+                    $stmt = $connect->prepare("
                 SELECT m.mat_id, m.mat_data 
                 FROM tbMatricula m 
                 JOIN tbUsuario u ON m.aluno_id = u.id_aluno 
                 WHERE u.id = ?
                 ");
-                $stmt->bind_param("i", $id_usuario_especifico);
-                $stmt->execute();
-                $result = $stmt->get_result();
+                    $stmt->bind_param("i", $id_usuario_especifico);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
 
-                if ($result->num_rows > 0) {
-                    echo "<table border='1'>
+                    if ($result->num_rows > 0) {
+                        echo "<table border='1'>
                           <tr class='infoTop'>
                               <th>Id</th>
                               <th>Data da matrícula</th>
                           </tr>";
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr class='infoBot'>
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr class='infoBot'>
                                 <td>" . htmlspecialchars($row["mat_id"]) . "</td>
                                 <td>" . htmlspecialchars($row["mat_data"]) . "</td>
                               </tr>";
+                        }
+                        echo "</table>";
+                    } else {
+                        echo "0 resultados";
                     }
-                    echo "</table>";
-                } else {
-                    echo "0 resultados";
-                }
-                $stmt->close();
-                ?>
-            </div>
+                    $stmt->close();
+                    ?>
+                </div>
             </div>
             <div class="dAluno nota">
                 <?php
@@ -169,7 +172,7 @@
                 // Query para selecionar os dados do boletim
                 $stmt = $connect->prepare("
                 SELECT a.nome AS aluno_nome, d.nome AS disciplina_nome, 
-                       nf.nota, nf.data_falta
+                       nf.nota, nf.frequen
                 FROM tbMatricula m
                 JOIN tbAluno a ON m.aluno_id = a.aluno_id
                 JOIN tbNotasFaltas nf ON m.mat_id = nf.mat_id
@@ -187,14 +190,14 @@
                           <tr>
                               <th>Disciplina</th>
                               <th>Nota</th>
-                              <th>Data da Falta</th>
+                              <th>Frequência</th>
                           </tr>";
                     // Loop para exibir os dados
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>
                                 <td>" . htmlspecialchars($row["disciplina_nome"]) . "</td>
                                 <td>" . htmlspecialchars($row["nota"] ?? 'N/A') . "</td>
-                                <td>" . htmlspecialchars($row["data_falta"] ?? 'N/A') . "</td>
+                                <td>" . htmlspecialchars($row["frequen"] ?? 'N/A') . "%</td>
                               </tr>";
                     }
                     // Fecha a tabela

@@ -329,6 +329,10 @@ iframe {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 45%;
+  max-height: 45%;
+  margin-left: 50%;
+  margin-top: 4%;
 }
 
 .lForm {
@@ -381,12 +385,6 @@ input[type=password] {
 img.avatar {
   width: 35%;
   border-radius: 30%;
-}
-
-.lLogo {
-  margin-left: 15%;
-  height: 220px;
-  width: 220px;
 }
 
 .container {
@@ -532,7 +530,7 @@ justify-content: space-between;
   padding: 4px 4px;
   margin-top: 5%;
   margin-left: 5%;
-  background-color: #a81212;
+  background-color: #c3a4a4;
 }
 
 .faixa {
@@ -586,7 +584,7 @@ justify-content: space-between;
 .okbtns {
   width: auto;
   padding: 5px 5px;
-  background-color: rgb(152, 0, 0);
+  background-color: rgb(200, 160, 160);
 }
 
 /* Animação de zoom */

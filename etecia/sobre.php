@@ -53,7 +53,7 @@
             <div class="contato">
             <p class="cTextT">Tel:</p>
             <br>
-                <p class="cText">(00) 0129-0762</p>
+                <p class="cText">(11) 93360-3860</p>
             </div>
             <div class="endereço">
                 <img src="images/maps.png" class="mapsIcon" alt="icone-maps">

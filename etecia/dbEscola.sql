@@ -122,18 +122,18 @@ CREATE TABLE tbNotasFaltas (
     mat_id INT NOT NULL,
     disc_id INT NOT NULL,
     nota DECIMAL(5,2) NOT NULL,
-    data_falta DATE NULL,
+    frequen VARCHAR(10) NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (disc_id) REFERENCES tbDisciplina(disc_id),
     FOREIGN KEY (mat_id) REFERENCES tbMatricula(mat_id) ON DELETE CASCADE
 );
 
 -- Inserindo dados de exemplo na tabela combinada de Notas e Faltas
- INSERT INTO tbNotasFaltas (mat_id,disc_id, nota, data_falta) 
+ INSERT INTO tbNotasFaltas (mat_id,disc_id, nota, frequen) 
 VALUES
-(3, 1, 5,NULL),(3, 2, 6,NULL),(3, 3, 6,NULL),(3, 4, 6,NULL),(3, 5, 8,NULL),(3, 6, 10,NULL),(3, 7, 9,NULL),(3, 8, 10,NULL),(3, 9, 10,NULL),(3, 10, 7,NULL),(3, 11, 8,NULL),(3, 12, 6,NULL),
-(2, 1, 7,NULL),(2, 2, 8,NULL),(2, 3, 10,NULL),(2, 4, 10,NULL),(2, 5, 8,NULL),(2, 6, 8,NULL),(2, 7, 6,NULL),(2, 8, 5,NULL),(2, 9, 10,NULL),(2, 10, 10,NULL),(2, 11, 7,NULL),(2, 12, 8,NULL),
-(1, 1, 8,NULL),(1, 2, 7,NULL),(1, 3, 9,NULL),(1, 4, 10,NULL),(1, 5, 10,NULL),(1, 6, 9,NULL),(1, 7, 9,NULL),(1, 8, 9,NULL),(1, 9, 9,NULL),(1, 10, 9,NULL),(1, 11, 9,NULL),(1, 12, 10,NULL); 
+(3, 1, 5,81),(3, 2, 6,91),(3, 3, 6,100),(3, 4, 6,95),(3, 5, 8,67),(3, 6, 10,67),(3, 7, 9,69),(3, 8, 10,75),(3, 9, 10,98),(3, 10, 7,85),(3, 11, 8,76),(3, 12, 6,80),
+(2, 1, 7,75),(2, 2, 8,75),(2, 3, 10,76),(2, 4, 10,99),(2, 5, 8,98),(2, 6, 8,100),(2, 7, 6,100),(2, 8, 5,97),(2, 9, 10,55),(2, 10, 10,41),(2, 11, 7,80),(2, 12, 8,80),
+(1, 1, 8,100),(1, 2, 7,100),(1, 3, 9,100),(1, 4, 10,100),(1, 5, 10,100),(1, 6, 9,100),(1, 7, 9,100),(1, 8, 9,100),(1, 9, 9,100),(1, 10, 9,100),(1, 11, 9,100),(1, 12, 10,100); 
 
 -- Exibir a estrutura das tabelas
 SHOW CREATE TABLE tbFuncionario;
